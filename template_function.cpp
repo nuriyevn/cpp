@@ -1,10 +1,17 @@
 #include <iostream>
+//www.codeproject.com/Articles/257589/An-Idiots-Guide-to-Cplusplus-Templates-Part-1
 using namespace std;
 template<typename TYPE>
 TYPE Twice(TYPE data)
 {
     return data * 2;
 
+}
+
+template<class T>
+void TwiceIt(T& tData)
+{
+	tData *= 2;
 }
 
 template<class T>
@@ -27,23 +34,39 @@ double GetAverage(T tArray[], int nElements)
 	return double(tSum) / nElements;
 }
 
-
 class MyInt
 {
 public:
-
-	//int operator*()
+	int& operator*()
+	{
+		return *data;
+	}
+	
 	MyInt& operator+=(const MyInt& right)
 	{
 		*data = *data + *(right.data);
+		return *this;
+	}
+
+	MyInt operator*(MyInt& right)
+	{
+		MyInt r = *data * *(right.data);
+		cout << "MyInt operator*(MyInt& right); is called";
+		cout << endl;
+		return r;
+	}
+
+
+	MyInt& operator*=(const MyInt& right)
+	{
+		cout << "MyInt& operator*=(const MyInt& right)" << endl;
+		*data = *data * *(right.data);
 		return *this;
 	}
 	operator double() const
 	{
 		return double(*data);
 	}
-
-
 	MyInt()
 	{
 		data = new int;
@@ -51,6 +74,7 @@ public:
 	}
 	MyInt(int d)
 	{
+		cout << "MyInt(int d); is called. d = " << d << endl;
 		data = new int;
 		*data = d;
 	}
@@ -75,7 +99,7 @@ public:
 	{
 		*data = v;
 	}
-	int& get()
+	int& get() const
 	{
 		return *data;
 	}
@@ -87,6 +111,14 @@ public:
 private:
 	int *data;	
 };
+
+
+/*MyInt operator*(int x, const MyInt& mint)
+{
+	MyInt r;
+	r =  x * mint.get();
+	return r;
+}*/
 
 int main()
 {
@@ -131,6 +163,34 @@ int main()
 	MyInt array[2];
 	array[0].set(67);
 	array[1].set(2);
-	cout << GetAverage(array, 2);
-	
+	cout << GetAverage(array, 2) << endl;;
+
+	int ti = 6;
+
+	MyInt brand_new(78);
+
+	TwiceIt(brand_new);
+	cout << "ti = " << *brand_new << endl;
+
+
+	cout << "Multiplication example:" << endl;
+
+	MyInt m1(7);
+	MyInt m2(10);
+	MyInt m3;
+	m3 = m1 * m2;
+
+	cout << "Result of : " << *m1 << " * " << *m2 << " = " << *m3;
+	cout << endl;
+
+	MyInt m4;
+	m4 = m3 * 5;
+	MyInt m5;
+	m5 = 6 * m3;
+
+	cout << "m4 = " << *m4 << "; m5 = " << *m5 << endl;
+	MyInt m6;
+	m6 = m5 * m4;
+	cout << "m6 = " << *m6 << endl;
+
 }
