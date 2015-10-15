@@ -24,3 +24,7 @@ std_move:
 	g++ -Wfatal-errors -std=c++11 std_move.cpp -o std_move.out && ./std_move.out
 template_function:
 	g++ -Wfatal-errors -std=c++11 template_function.cpp -o template_function.out && ./template_function.out
+NoArgFunction:
+	g++ -Wfatal-errors -std=c++11 NoArgFunction.cpp -o NoArgFunction.out && ./NoArgFunction.out
+sp2:
+	g++ -Wfatal-errors -std=c++11 sp2.cpp -o sp2.out && ./sp2.out
