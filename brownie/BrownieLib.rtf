@@ -1,0 +1,508 @@
+{\rtf1\ansi\deff3\adeflang1025
+{\fonttbl{\f0\froman\fprq2\fcharset0 Times New Roman;}{\f1\froman\fprq2\fcharset2 Symbol;}{\f2\fswiss\fprq2\fcharset0 Arial;}{\f3\froman\fprq2\fcharset204 Times New Roman;}{\f4\fswiss\fprq2\fcharset204 Arial;}{\f5\fmodern\fprq1\fcharset204 Courier New;}{\f6\fnil\fprq2\fcharset204 Arial Unicode MS;}{\f7\fnil\fprq2\fcharset204 Mangal;}{\f8\fnil\fprq0\fcharset204 Mangal;}}
+{\colortbl;\red0\green0\blue0;\red128\green128\blue128;}
+{\stylesheet{\s0\snext0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049 Default Style;}
+{\s15\sbasedon0\snext16\sb240\sa120\keepn\dbch\af6\dbch\af7\afs28\loch\f4\fs28 Heading;}
+{\s16\sbasedon0\snext16\sb0\sa120 Text Body;}
+{\s17\sbasedon16\snext17\sb0\sa120\dbch\af8 List;}
+{\s18\sbasedon0\snext18\sb120\sa120\noline\i\dbch\af8\afs24\ai\fs24 Caption;}
+{\s19\sbasedon0\snext19\noline\dbch\af8 Index;}
+{\s20\sbasedon0\snext20\sb0\sa0\dbch\af5\dbch\af5\afs20\loch\f5\fs20 Preformatted Text;}
+{\s21\sbasedon0\snext21\noline Table Contents;}
+}{\info{\creatim\yr2012\mo12\dy24\hr14\min22}{\revtim\yr2012\mo12\dy24\hr15\min26}{\printim\yr0\mo0\dy0\hr0\min0}{\comment LibreOffice}{\vern4000}}\deftab709
+\viewscale100
+{\*\pgdsctbl
+{\pgdsc0\pgdscuse451\pgwsxn11906\pghsxn16838\marglsxn1134\margrsxn1134\margtsxn1134\margbsxn1134\pgdscnxt0 Default Style;}}
+\formshade\paperh16838\paperw11906\margl1134\margr1134\margt1134\margb1134\sectd\sbknone\sectunlocked1\pgndec\pgwsxn11906\pghsxn16838\marglsxn1134\margrsxn1134\margtsxn1134\margbsxn1134\ftnbj\ftnstart1\ftnrstcont\ftnnar\aenddoc\aftnrstcont\aftnstart1\aftnnrlc
+\pgndec\pard\plain \s20\sb0\sa0\dbch\af5\dbch\af5\afs20\loch\f5\fs20{\i\b\ai\ab\rtlch \ltrch\loch\lang1033
+t}{\i\b\ai\ab\rtlch \ltrch\loch
+emplate <typename Argument_, }
+\par \pard\plain \s20\sb0\sa0\dbch\af5\dbch\af5\afs20\loch\f5\fs20{\i\b\ai\ab\rtlch \ltrch
+          }{\i\b\ai\ab\rtlch \ltrch\loch
+typename Result_, }
+\par \pard\plain \s20\sb0\sa0\dbch\af5\dbch\af5\afs20\loch\f5\fs20{\i\b\ai\ab\rtlch \ltrch
+          }{\i\b\ai\ab\rtlch \ltrch\loch
+typename Error_>}
+\par \pard\plain \s20\sb0\sa0\dbch\af5\dbch\af5\afs20\loch\f5\fs20{\i\b\ai\ab\rtlch \ltrch\loch
+class FormalOperationCall}
+\par \pard\plain \s20\sb0\sa0\dbch\af5\dbch\af5\afs20\loch\f5\fs20\rtlch \ltrch\loch
+
+\par \pard\plain \s20\sb0\sa0\dbch\af5\dbch\af5\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+This template class declares a view of the call for the callee and the interfaces of a call by argument-type, error-type and result-type in implementation dependent manner.}
+\par \pard\plain \s20\sb0\sa0\dbch\af5\dbch\af5\afs20\loch\f5\fs20\rtlch \ltrch\loch
+
+\par \pard\plain \s20\sb0\sa0\dbch\af5\dbch\af5\afs20\loch\f5\fs20{\rtlch \ltrch\loch
+Interfaces}
+\par \trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s20\sb0\sa0\dbch\af5\dbch\af5\afs20\loch\f5\fs20\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Function Name}\cell\pard\plain \s20\sb0\sa0\dbch\af5\dbch\af5\afs20\loch\f5\fs20\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Parameter}\cell\pard\plain \s20\sb0\sa0\dbch\af5\dbch\af5\afs20\loch\f5\fs20\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Return}\cell\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Description}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+getArgument}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Argument Type}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Retrieve call argument}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+result}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Result Type}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Set call result type}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+error}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Error Type}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Set error type}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+sendResult}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+send result back to caller}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+sendError}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+send error back to caller}\cell\row\pard\pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\i\b\ai\ab\rtlch \ltrch\loch
+template <typename Value_,}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\i\b\ai\ab\rtlch \ltrch
+                 }{\i\b\ai\ab\rtlch \ltrch\loch
+typename Argument_ = brownie::common::Void>}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\i\b\ai\ab\rtlch \ltrch\loch
+class FormalNotification}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+This template class declares a view of the notification for the callee and the interfaces of a notification by value-type and argument-type in implementation dependent manner.}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+Interfaces}
+\par \trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Function Name}\cell\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Parameter}\cell\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Return}\cell\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Description}\cell\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+getArgument}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Argument Type}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Retrieve notification argument}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+status}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Result Type}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Set call status type}\cell\row\pard\pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\i\b\ai\ab\rtlch \ltrch\loch
+template <typename Callabletarget_>}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\i\b\ai\ab\rtlch \ltrch\loch
+class LocalCallable}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+This template class defines the callable aspect for local execution units. The callable target derives from this class and declares an appropriate }{\b\ab\rtlch \ltrch\loch
+handleCall}{\rtlch \ltrch\loch
+ and/or }{\b\ab\rtlch \ltrch\loch
+handleNotification}{\rtlch \ltrch\loch
+.}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+Interfaces}
+\par \trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Function Name}\cell\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Parameter}\cell\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Return}\cell\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Description}\cell\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+scheduleCall}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+FormalOperationCall}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Call initialization}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+scheduleNotification}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+FormalNotification}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Notification initialization}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+scheduleDenotification}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+FormalNotification}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Denotification initialization}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+handleCall}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+FormalOperationCall}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Routine for every formal call to handle}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+handleNotification}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+FormalNotification}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Routine for every formal notification to handle}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+handleDenotification}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+FormalNotification}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Stop sending notifications of argument type}\cell\row\pard\pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\i\b\ai\ab\rtlch \ltrch\loch
+template <typename FormalCall_,}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\i\b\ai\ab\rtlch \ltrch
+                 }{\i\b\ai\ab\rtlch \ltrch\loch
+typename Data_>}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\i\b\ai\ab\rtlch \ltrch\loch
+class ConcreteOperationCall}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+This template class is a nested class of }{\b\ab\rtlch \ltrch\loch
+LocalCallback}{\rtlch \ltrch\loch
+ class, and declares a view of the call for the caller. It binds data type of }{\b\ab\rtlch \ltrch\loch
+FormalOperationCall}{\rtlch \ltrch\loch
+ and }{\b\ab\rtlch \ltrch\loch
+Data}{\rtlch \ltrch\loch
+. It is used by the factory-method }{\b\ab\rtlch \ltrch\loch
+LocalCallback::createCall()}{\rtlch \ltrch\loch
+ to create a concrete call Object, which can send a call and retrieve the result/error.}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+Interfaces}
+\par \trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Function Name}\cell\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Parameter}\cell\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Return}\cell\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Description}\cell\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+getResult}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Result Type}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Get call result}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+getError}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+ErrorType}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Get call error}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+argument}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Argument Type}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Set call argument}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+sendTo}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Callable Target}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Send call to callable target}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+release}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Release the call}\cell\row\pard\pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\i\b\ai\ab\rtlch \ltrch\loch
+template <typename FormalNotification_,}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\i\b\ai\ab\rtlch \ltrch
+                 }{\i\b\ai\ab\rtlch \ltrch\loch
+typename Data_ >}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\i\b\ai\ab\rtlch \ltrch\loch
+class ConcreteNotification}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+This template class is a nested class of }{\b\ab\rtlch \ltrch\loch
+LocalCallback}{\rtlch \ltrch\loch
+ class. It binds data type of }{\b\ab\rtlch \ltrch\loch
+FormalNotification}{\rtlch \ltrch\loch
+ and }{\b\ab\rtlch \ltrch\loch
+Data}{\rtlch \ltrch\loch
+, and provides interface to send notification/denotification and retrieve status.}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+Interfaces}
+\par \trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Function Name}\cell\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Parameter}\cell\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Return}\cell\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Description}\cell\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+getStatus}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Value Type}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Get status update value}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+argument}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Argument Type}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Set notification argument}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+isNotified}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+bool}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Check if notification sent successfully}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+notifyAt}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Callable Target}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Registration request to the service for receiving status update}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+denotify}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Request to unregister from receiving status update}\cell\row\pard\pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\i\b\ai\ab\rtlch \ltrch\loch
+template <CallbackTarget_>}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\i\b\ai\ab\rtlch \ltrch\loch
+class LocalCallback}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+This template class defines the callback aspect for local execution units. The callback target derives from this class and needs to define response handler function for a call or for a notification.}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+Of course, classes may inheritate from both, }{\b\ab\rtlch \ltrch\loch
+LocalCallback}{\rtlch \ltrch\loch
+ and }{\b\ab\rtlch \ltrch\loch
+LocalCallable}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+Interfaces }
+\par \trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Function Name}\cell\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Parameter}\cell\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Return}\cell\pard\plain \s21\noline\intbl{\i\b\ai\ab\rtlch \ltrch\loch
+Description}\cell\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+createCall}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+ConcreteOperationCall}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+bool}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Create call}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+createCallArg}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+ConcreteOperationCall}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+bool}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Create call with argument parameter }{\b\ab\rtlch \ltrch\loch
+ArgumentType}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+createCallData}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+ConcreteOperationCall}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+bool}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Create call with data parameter }{\b\ab\rtlch \ltrch\loch
+DataType}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+createCallArgData}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+ConcreteOperationCall}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+bool}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Create call with argument and data parameter }{\b\ab\rtlch \ltrch\loch
+ArgumentType DataType}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+createNotification}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+ConcreteNotification}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+bool}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Create notification request}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+setNotification}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+ConcreteNotification}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+bool}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Set notification subject - what the client interested to }{\b\ab\rtlch \ltrch\loch
+SubjectType}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+setNotificationData}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+ConcreteNotification}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+bool}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Set notification with data parameter }{\b\ab\rtlch \ltrch\loch
+DataType SubjectType}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+removeNotification}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+ConcreteNotification}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Denotify and set the notification pointer to null}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+onResult}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+ConcreteOperationCall}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Routine to handle call result}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+onError}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+ConcreteOperationCall}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Routine to handle errornous call}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+onStatus}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+ConcreteNotification}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Routine to handle status update}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+onDenotification}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+ConcreteNotification}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Routine to handle denotifiation request}\cell\row\pard\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+onErrorStatus}\cell\trowd\trql\ltrrow\trpaddft3\trpaddt0\trpaddfl3\trpaddl0\trpaddfb3\trpaddb0\trpaddfr3\trpaddr0\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx2409\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx4818\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\cellx7228\clbrdrt\brdrhair\brdrw1\brdrcf1\clbrdrl\brdrhair\brdrw1\brdrcf1\clbrdrb\brdrhair\brdrw1\brdrcf1\clbrdrr\brdrhair\brdrw1\brdrcf1\cellx9638\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+ConcreteNotification}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+None}\cell\pard\plain \s21\noline\intbl{\rtlch \ltrch\loch
+Routine to handle status update error}\cell\cell\row\pard\pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+Usage Example}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+typedef brownie::asynch::FormalOperationCall<int, int> MyFormalCall;}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+typedef brownie::asynch::FormalNotification< int > MyNotification;}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+class TestCallableTarget}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+: public LocalCallable<TestCallableTarget> }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+\{ }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }{\rtlch \ltrch\loch
+void handleCall( MyFormalCall& call )\{}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+   }{\rtlch \ltrch\loch
+// Uses interfaces of FormalOperationalCall to set data of call object and send it back to caller}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }{\rtlch \ltrch\loch
+\};}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }{\rtlch \ltrch\loch
+void handleNotification( MyFormalNotification& notification }{\rtlch \ltrch\loch\lang1033
+)}{\rtlch \ltrch\loch
+\{ \};}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+\};}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+typedef ConcreteOperationCall< MyFormalCall > MyConcreteCall;}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+typedef ConcreteNotification< MyFormalCall > MyNotification;}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+Create call}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+class TestOperationCallCallback}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+: public LocalCallback<TestOperationCallCallback> }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+\{ }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }{\rtlch \ltrch\loch
+struct someData \{}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+  }{\rtlch \ltrch\loch
+someData( int anInt_ ): anInt( anInt_ ) \{\}}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+  }{\rtlch \ltrch\loch
+int anInt;}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }{\rtlch \ltrch\loch
+\};}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }{\rtlch \ltrch\loch
+typedef ConcreteOperationCall< MyFormalCall, someData > ConcreteTestOperationCall;}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }{\rtlch \ltrch\loch
+TestOperationCallCallback( TestCallableTarget& callableObject_ ):    }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+   }{\rtlch \ltrch\loch
+callableObject( callableObject_ ) \{\}}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }{\rtlch \ltrch\loch
+void run() }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }{\rtlch \ltrch\loch
+\{ }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+  }{\rtlch \ltrch\loch
+ConcreteTestOperationCall* pCall = 0; }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+  }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+  }{\rtlch \ltrch\loch
+if(createCallData( pCall, someData(5) ))}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+  }{\rtlch \ltrch\loch
+\{}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+   }{\rtlch \ltrch\loch
+pCall->argument() = 1;}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+   }{\rtlch \ltrch\loch
+pCall->sendTo( callableObject ); }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+  }{\rtlch \ltrch\loch
+\}}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }{\rtlch \ltrch\loch
+\}}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+  }{\rtlch \ltrch\loch
+void onResult( ConcreteTestOperationCall& call )\{ \}; }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+  }{\rtlch \ltrch\loch
+void onError( ConcreteTestOperationCall& call )\{ \};}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+\};}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+int main() \{}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }{\rtlch \ltrch\loch
+TestCallableTarget callee;}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }{\rtlch \ltrch\loch
+TestOperationalCallCallback caller(callee);}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }{\rtlch \ltrch\loch
+caller.run();}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+\}}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+Create notification}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+class TestNotificationCallback}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+: public LocalCallback<TestNotificationCallback> }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+\{}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }{\rtlch \ltrch\loch
+typedef ConcreteNotification< MyFormalNotification > ConcreteTestNotification;}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }{\rtlch \ltrch\loch
+void start() }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }{\rtlch \ltrch\loch
+\{}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+  }{\rtlch \ltrch\loch
+ConcreteTestNotification* pNotify = 0;}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+  }{\rtlch \ltrch\loch
+if (createNotification( pNotify ))  }
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+  }{\rtlch \ltrch\loch
+\{}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+   }{\rtlch \ltrch\loch
+pNotify->notifyAt( callableObject );}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+  }{\rtlch \ltrch\loch
+\}}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }{\rtlch \ltrch\loch
+\}}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049\rtlch \ltrch\loch
+
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }{\rtlch \ltrch\loch
+void onStatus( ConcreteTestNotification& notification )\{ \};}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }{\rtlch \ltrch\loch
+void onDenotification( ConcreteTestNotification& notification ) \{ \};}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch
+ }{\rtlch \ltrch\loch
+void onErrorStatus( ConcreteTestNotofication$ notification ) \{ \};}
+\par \pard\plain \s0\nowidctlpar{\*\hyphen2\hyphlead2\hyphtrail2\hyphmax0}\aspalpha\ltrpar\cf0\kerning1\dbch\af6\langfe2052\dbch\af7\afs24\alang1081\loch\f3\fs24\lang1049{\rtlch \ltrch\loch
+\};}
+\par }

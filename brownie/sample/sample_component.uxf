@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.0">
+  <zoom_level>8</zoom_level>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>400</x>
+      <y>448</y>
+      <w>856</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-(()-</panel_attributes>
+    <additional_attributes>840;24;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>16</x>
+      <y>344</y>
+      <w>352</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>CCallArgumentState1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.UseCase</type>
+    <coordinates>
+      <x>488</x>
+      <y>232</y>
+      <w>584</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=.
+FormalOperationCall&lt;CCallArgumentState1, CCallResult, CCallError&gt; tTestFormalOperationCall1
+fg=red
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1200</x>
+      <y>408</y>
+      <w>56</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>40;64;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>344</x>
+      <y>224</y>
+      <w>160</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>24;248;144;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>400</x>
+      <y>496</y>
+      <w>104</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>24;112;88;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.UseCase</type>
+    <coordinates>
+      <x>488</x>
+      <y>504</y>
+      <w>584</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=.
+FormalNotification&lt;CNotificationStatus&gt; tFormalTestNotification
+fg=blue
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>1256</x>
+      <y>232</y>
+      <w>352</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>CSimpleCallback
+--
++ CSimpleCallback(CSimpleCallable&amp; callable)
++ void onResult(tTestConcreteOperationCall1&amp; call)
++ void onError(tTestConcreteOperationCall1&amp; call)
++ void onResult(tTestConcreteOperationCall2&amp; call)
++ void onError(tTestConcreteOperationCall2&amp; call)
++ void onStatus(tTestConcreteNotification&amp; notification)
++ void onErrorStatus(tTestConcreteNotification&amp; notification)
++ void onDenotification(tTestConcreteNotification&amp; notification)
++ void startNotification()
++ void stopNotification()
++ void call1(const int val)
++ void call2(const int val)
+--
+- CSimpleCallable&amp; mSimpleCallable;
+- tTestConcreteNotification * mConcreteNotification;
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>0</x>
+      <y>232</y>
+      <w>424</w>
+      <h>496</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>344</x>
+      <y>488</y>
+      <w>160</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>24;24;144;32</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>344</x>
+      <y>224</y>
+      <w>160</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>24;128;144;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>16</x>
+      <y>464</y>
+      <w>352</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>CCallError</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1200</x>
+      <y>272</y>
+      <w>56</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>40;64;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>400</x>
+      <y>224</y>
+      <w>104</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>24;112;88;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.UseCase</type>
+    <coordinates>
+      <x>640</x>
+      <y>280</y>
+      <w>584</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=.
+ConcreteOperationCall&lt;CSimpleCallable::tTestFormalOperationCall1&gt; tTestConcreteOperationCall1
+fg=red
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>16</x>
+      <y>384</y>
+      <w>352</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>CCallArgumentState2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>1200</x>
+      <y>544</y>
+      <w>56</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>40;64;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>344</x>
+      <y>224</y>
+      <w>160</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>24;216;144;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.UseCase</type>
+    <coordinates>
+      <x>640</x>
+      <y>416</y>
+      <w>584</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=.
+ConcreteOperationCall&lt;CSimpleCallable::tTestFormalOperationCall2&gt; tTestConcreteOperationCall2
+fg=red
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>400</x>
+      <y>584</y>
+      <w>856</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-(()-</panel_attributes>
+    <additional_attributes>840;24;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.UseCase</type>
+    <coordinates>
+      <x>488</x>
+      <y>368</y>
+      <w>584</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=.
+FormalOperationCall&lt;CCallArgumentState2, CCallResult, CCallError&gt; tTestFormalOperationCall2
+fg=red
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>16</x>
+      <y>504</y>
+      <w>352</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>CNotificationStatus</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>344</x>
+      <y>360</y>
+      <w>160</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>24;80;144;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.custom.Component</type>
+    <coordinates>
+      <x>1240</x>
+      <y>224</y>
+      <w>448</w>
+      <h>504</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>344</x>
+      <y>360</y>
+      <w>160</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>24;112;144;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>400</x>
+      <y>312</y>
+      <w>856</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-(()-</panel_attributes>
+    <additional_attributes>840;24;24;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.UseCase</type>
+    <coordinates>
+      <x>640</x>
+      <y>552</y>
+      <w>584</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=.
+ConcreteNotification&lt;CSimpleCallable::tFormalTestNotification&gt; tTestConcreteNotification
+fg=blue
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>400</x>
+      <y>360</y>
+      <w>104</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>24;112;88;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>16</x>
+      <y>424</y>
+      <w>352</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>CCallResult</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>344</x>
+      <y>360</y>
+      <w>160</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>24;32;144;24</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>16</x>
+      <y>240</y>
+      <w>352</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>CSimpleCallable
+--
++ void handleCall(tTestFormalOperationCall1&amp; call)
++ void handleCall(tTestFormalOperationCall2&amp; call)
++ void handleNotification(tFormalTestNotification&amp; notification)
++ void handleDenotification(tFormalTestNotification&amp; notification)
+--
+- tFormalTestNotification * mNotification;</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
