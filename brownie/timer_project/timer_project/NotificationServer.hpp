@@ -24,7 +24,7 @@ public:
 	// this strcture will store countdown value
 	struct NotificationStatus
 	{
-		NotifictionStatus() : countdown(20) {};
+		NotificationStatus() : countdown(20) {};
 		int countdown;
 	};
 
@@ -50,13 +50,40 @@ public:
 
 	DWORD start()
 	{
-	/*	mNeedStop = false;
-		while (!mNeedStop)
-		{
-			time_t rawtime;
-			time(&rawtime);
+		mNeedStop = false;
+		mNeedPause = false;
+		int cd = 20;
 
-		}*/
+		while (1)
+		{
+			if (mNeedPause)
+				continue;
+			if (mNeedStop)
+				break;
+
+			if (mCountdownNotification != 0)
+			{
+				mCountdownNotification->status().countdown = cd;
+				mCountdownNotification->sendStatus();
+			}
+			--cd;
+			::Sleep(1000);
+		}
+		return 0;
+	}
+
+	DWORD pause()
+	{
+		std::cout << "Pausing notifications\n" << std::endl;
+		mNeedPause = true;
+		return 0;
+	}
+
+	DWORD unpause()
+	{
+		std::cout << "Continuing notifications\n" << std::endl;
+		mNeedPause = false;
+		return 0;
 	}
 
 	void stop()
@@ -66,20 +93,22 @@ public:
 
 private:
 	bool mNeedStop;
+	bool mNeedPause;
 	CountdownNotification* mCountdownNotification;	
 };
 
 class CNotificationServerCallback : public brownie::asynch::LocalCallback<CNotificationServerCallback>
 {
 public:
-	CNotificationSeverCallback(CNotificationServerCallable& callable)
+	CNotificationServerCallback(CNotificationServerCallable& callable)
 		: mCallable(callable)
+		, mCountdownNotification(0)
 	{
 
 	};
 	typedef ConcreteNotification<CNotificationServerCallable::CountdownNotification> MyCountdownNotification;
 	
-	void onStatus(MyCountdownNotificatio& notification)
+	void onStatus(MyCountdownNotification& notification)
 	{
 		int countdown = notification.getStatus().countdown;
 		std::cout << "Countdown = " << countdown << std::endl;
@@ -96,7 +125,13 @@ public:
 	{
 		std::cout << "----------------------------------------" << std::endl;
 		std::cout << "Subscribe to the MyCountdownNotification" << std::endl;
-		setNotification(m)
+		setNotification(mCountdownNotification, mCallable);
+
+	}
+	void unsubscribeCountdownNotification()
+	{
+		std::cout << "Unsubscribe from the MyCountdownNotification" << std::endl;
+		removeNotification(mCountdownNotification);
 	}
 
 private:
@@ -104,9 +139,6 @@ private:
 	CNotificationServerCallable& mCallable;
 	MyCountdownNotification* mCountdownNotification;	
 };
-
-
-
 
 }
 }

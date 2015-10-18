@@ -166,7 +166,7 @@ int main(int argc, char* argv)
          callback_notification.subscribeSimpleNotification();
          Sleep(NOTIFICATION_SLEEP_VALUE);
          callback_notification.unsubscribeSimpleNotification();
-      
+   /*  
          // Получаем метки времени (текущее и предыдущее значения)
          callback_notification.subscribeSimpleDataNotification();
          Sleep(NOTIFICATION_SLEEP_VALUE);
@@ -183,6 +183,8 @@ int main(int argc, char* argv)
          Sleep(NOTIFICATION_SLEEP_VALUE);
          callback_notification.unsubscribeSimpleNotification();
          callback_notification.unsubscribeArgumentNotification();
+		 */
+
       }
    }
    Sleep(SLEEP_VALUE);
