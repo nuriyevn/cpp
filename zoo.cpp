@@ -22,6 +22,14 @@ class CAnimal : public CBeing
 class CPerson : public CBeing
 {
 // not yet implemented
+public:
+	string mSurname;
+	string mMiddleName;
+	virtual void eat()
+	{
+		cout << "I'm a human! What a tasty beef! Omnomonomonomnom!" << endl;
+	}
+	
 };
 
 class CGazelle : public CAnimal
@@ -51,11 +59,27 @@ class CLion : public CAnimal
 
 class CStaff : public CPerson
 {
-// Not yet implemented
+public:
+	void work()
+	{
+	}
+	void eat()
+	{
+		time_t tm;
+		time(&tm);
+		// if current hour is not between 13:00 and 14:00, can't eat. 
+	}
 };
 class CGuest : public CPerson
 {
-// Not yet implemented
+public:
+	void watchTheDivine()
+	{
+		
+	}
+	void buyTicket(int ticketsCount)
+	{
+	}
 };
 
 int main()
