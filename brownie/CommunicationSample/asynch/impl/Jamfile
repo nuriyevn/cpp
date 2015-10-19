@@ -1,0 +1,24 @@
+# ----------------------------------------------------------------------
+# project       nbt navigation
+# copyright (c) 2009
+# company       Harman/Becker Automotive Systems GmbH
+# all rights reserved
+# secrecy level STRICTLY CONFIDENTIAL 
+#
+# author        mathias czichi
+# ----------------------------------------------------------------------
+
+SubDir ROOT imp nav common prj nbt util brownie asynch impl ;
+
+if ( $(HWVARIANT) != TestEnvironment )
+{
+HBLibrary imp_nav_common_prj_nbt_util :
+   MoCCAJobExecutor.cpp
+   ;
+}
+else
+{
+HBLibrary imp_nav_common_prj_nbt_util :
+   SimpleJobExecutor.cpp
+   ;
+}

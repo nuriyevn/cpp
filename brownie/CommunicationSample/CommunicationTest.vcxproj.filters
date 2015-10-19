@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Communication">
+      <UniqueIdentifier>{f7fbd3f1-2546-4cea-8ab0-fa5187eab344}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CommunicationSample">
+      <UniqueIdentifier>{0964e358-fa59-405f-a996-f7383ce10970}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="BrownieSample">
+      <UniqueIdentifier>{aad97c23-e954-4687-9619-8a3f7f518f47}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Brownie">
+      <UniqueIdentifier>{0ba2c46b-f7e7-46d3-b33b-7ebf50c6fd50}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Communication\Attribute.hpp">
+      <Filter>Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="Communication\CleanableReference.hpp">
+      <Filter>Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="Communication\Event.hpp">
+      <Filter>Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="Communication\NoArgFunction.hpp">
+      <Filter>Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="Communication\OneArgFunction.hpp">
+      <Filter>Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="CalculatorConsumer.hpp">
+      <Filter>CommunicationSample</Filter>
+    </ClInclude>
+    <ClInclude Include="AcyncCalculator.hpp">
+      <Filter>CommunicationSample</Filter>
+    </ClInclude>
+    <ClInclude Include="AcyncCalculatorB.hpp">
+      <Filter>BrownieSample</Filter>
+    </ClInclude>
+    <ClInclude Include="CalculatorConsumerB.hpp">
+      <Filter>BrownieSample</Filter>
+    </ClInclude>
+    <ClInclude Include="asynch\impl\NotificationCommunicationFacility.hpp">
+      <Filter>Brownie</Filter>
+    </ClInclude>
+    <ClInclude Include="asynch\impl\OperationCommunicationFacility.hpp">
+      <Filter>Brownie</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CommunicationSample.cpp" />
+    <ClCompile Include="CalculatorConsumer.cpp">
+      <Filter>CommunicationSample</Filter>
+    </ClCompile>
+    <ClCompile Include="AcyncCalculator.cpp">
+      <Filter>CommunicationSample</Filter>
+    </ClCompile>
+    <ClCompile Include="AcyncCalculatorB.cpp">
+      <Filter>BrownieSample</Filter>
+    </ClCompile>
+    <ClCompile Include="CalculatorConsumerB.cpp">
+      <Filter>BrownieSample</Filter>
+    </ClCompile>
+    <ClCompile Include="asynch\impl\JobExecutor.cpp">
+      <Filter>Brownie</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

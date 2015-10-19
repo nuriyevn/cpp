@@ -20,10 +20,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="NotificationServer.hpp">
+    <ClInclude Include="thread.hpp">
       <Filter>Файлы исходного кода</Filter>
     </ClInclude>
-    <ClInclude Include="thread.hpp">
+    <ClInclude Include="NotificationServer_client.hpp">
       <Filter>Файлы исходного кода</Filter>
     </ClInclude>
   </ItemGroup>
