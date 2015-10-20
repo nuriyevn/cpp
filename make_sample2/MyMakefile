@@ -1,0 +1,18 @@
+#The compile to use
+CC=g++
+#options
+CFLAGS=-c -Wall
+
+
+all: hello
+	
+hello: main.o factorial.o hello.o
+	$(CC) -o hello main.o factorial.o hello.o
+main.o: main.cpp
+	$(CC) $(CFLAGS) main.cpp
+factorial.o: factorial.cpp
+	$(CC) $(CFLAGS) factorial.cpp
+hello.o: hello.cpp
+	$(CC) $(CFLAGS) hello.cpp
+clean:
+	rm *.o hello
