@@ -28,3 +28,7 @@ NoArgFunction:
 	g++ -Wfatal-errors -std=c++11 NoArgFunction.cpp -o NoArgFunction.out && ./NoArgFunction.out
 sp2:
 	g++ -Wfatal-errors -std=c++11 sp2.cpp -o sp2.out && ./sp2.out
+observer:
+	g++ -Wfatal-errors observer.cpp -o observer.out && ./observer.out
+myobserver:
+	g++ -Wfatal-errors myobserver.cpp -o myobserver.out && ./myobserver.out
