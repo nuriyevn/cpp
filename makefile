@@ -32,3 +32,5 @@ observer:
 	g++ -Wfatal-errors observer.cpp -o observer.out && ./observer.out
 myobserver:
 	g++ -Wfatal-errors myobserver.cpp -o myobserver.out && ./myobserver.out
+chain_of_resp:
+	g++ -Wfatal-errors chain_of_resp.cpp -o chain_of_resp && ./chain_of_resp
