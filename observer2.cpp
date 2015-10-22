@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <vector>
 using namespace std;
 
 class Observer
@@ -12,7 +12,7 @@ public:
 class Subject
 {
 	int m_value;
-	vector m_views;
+	vector<Observer*> m_views;
 public:
 	void attach(Observer *obs)
 	{
@@ -21,7 +21,7 @@ public:
 	void set_val(int value)
 	{
 		m_value = value;
-		notify()
+		notify();
 	}
 	void notify()
 	{
@@ -41,7 +41,7 @@ public:
 	}
 	void update(int v)
 	{
-		cout << v << " div " << m_div << " is " << v / mdiv << '\n';	 
+		cout << v << " div " << m_div << " is " << v / m_div << '\n';	 
 	}
 };
 
