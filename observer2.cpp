@@ -62,7 +62,9 @@ public:
 
 int main()
 {
+	cout << "Observer2 is started" << endl;
 	Subject subj;
+
 	DivObserver divObs1(&subj, 4);
 	DivObserver divObs2(&subj, 3);
 	ModObserver modObs3(&subj, 3);
