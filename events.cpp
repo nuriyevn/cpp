@@ -20,6 +20,16 @@ private:
 	string event;
 	ListenerType *listener;
 	void (ListenerType::* action) (void);
+
+	virtual string GetEventName(void)  const 
+	{
+		return this->event;	
+	}
+
+	virtual void Invoke (void) const
+	{
+		(this->listener->*this->action)();	
+	};
 public:
 	Subscription ( string event,
 					ListenerType* listener,
@@ -43,8 +53,50 @@ void EventDispatcher::AddEventListener ( string event,
 
 };
 
-class SubscriptionBase
+template <typename ListenerType>
+void EventDispatcher::RemoveEventListener ( string event, 
+											ListenerType* listener,
+											void (ListenerType::* action) (void))
 {
+	for (int key = 0; key < this->subscriptions.size(); ++key)
+	{
+		Subscription<ListenerType>* subsription = 
+			dynamic_cast <Subscription <ListenerType>*> (this->subscription[key]);
+
+		if (subscription && subscriptioin->listener == listener && subscription->action == action)
+		{
+			this->subscription.erase( this->subscriptions.begin() + key);
+		};
+	};
+}
+
+void EventDispatcher::DispatchEvent (const string event) const
+{
+	for (int key = 0; key < this->subscriptions.size(); key++)
+	{
+		if (this->subscriptions[key]->GetEventName() == event )
+			this->subscriptions[key]->Invoke();
+	};
 };
 
+class SubscriptionBase
+{
+public:
+	virtual string GetEventName(void ) const
+	{
+	};
+};
+
+template <typename ListenerType> class Subsription : public SubscriptionBase
+{
+private:
+	virtual string GetEventName(void ) const
+	{
+		return this->event;
+	};
+	virtual void Invoke(void) const
+	{
+	};
+
+};
 
