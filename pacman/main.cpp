@@ -5,6 +5,31 @@
 
 using namespace std;
 
+class CriticalSectionContainer
+{
+public:
+	CriticalSectionContainer(CRITICAL_SECTION* pCS)
+		: m_pCS(pCS)
+	{
+		EnterCriticalSection(m_pCS);
+	}
+
+	~CriticalSectionContainer()
+	{
+		LeaveCriticalSection(m_pCS);
+	}
+
+	operator bool()
+	{
+		return true;
+	}
+
+private:
+	CRITICAL_SECTION* m_pCS;
+};
+
+#define CSBLOCK(x) if (CriticalSectionContainer __csc = x)
+
 HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 
 enum FieldContent
@@ -49,10 +74,28 @@ int APPLE_COLOR = yellow;
 int WALL_COLOR = light_gray;
 int SCORE_COLOR = light_magenta;
 
+
+
+const int ene_count = 5;
+COORD enemies[ene_count];
+
+// We have field matrix 24x24
+const int cols = 24, lines = 24;
+int field[lines][cols];
+
+
+DWORD moveEnemies(CriticalSectionContainer* pcsc);
+bool gameOver = false;
+
+
+
+
 void main()
 {
+	CRITICAL_SECTION cs;
+	InitializeCriticalSection(&cs);
 
-
+	CriticalSectionContainer csc(&cs);
 
 	// Setting the width of caret
 	srand(time(0));
@@ -69,9 +112,7 @@ void main()
 	int all_apples = 0;
 
 
-	// We have field matrix 24x24
-	const int cols = 24, lines = 24;
-	int field[lines][cols];
+	
 
 	// outer loop
 	for (int i = 0; i < lines; i++)
@@ -140,10 +181,6 @@ void main()
 	SetConsoleTextAttribute(h, PLAYER_COLOR);
 	cout << char(1);
 
-	
-	const int ene_count = 5;
-	COORD enemies[ene_count];
-
 	// Generating inital positin of enemies and draw them all
 	for (int i = 0; i < ene_count; i++)
 	{
@@ -164,19 +201,25 @@ void main()
 	}
 
 
+	HANDLE hThread = 0;
+	DWORD threadId = 0;
+	hThread = CreateThread(NULL, 0, (LPTHREAD_START_ROUTINE)moveEnemies, &csc, 0, &threadId);
 
 	while (1)
 	{
+
 		// MOVING THE PLAYER
 
 		// Handling keyboard key code
 		int code = _getch(); // conio.h
 
-		// updating position of cursor to the old position
-		SetConsoleCursorPosition(h, player);
-
-		// Remove the image of player
-		cout << " ";
+		CSBLOCK(csc)
+		{
+			// updating position of cursor to the old position
+			SetConsoleCursorPosition(h, player);
+			// Remove the image of player
+			cout << " ";
+		}
 
 		// Handling keyboard events
 		switch (code)
@@ -201,12 +244,16 @@ void main()
 			exit(0);
 			break;
 		}
-		// Set the new position of the player
-		SetConsoleCursorPosition(h, player);
-		// Set color of the player
-		SetConsoleTextAttribute(h, PLAYER_COLOR);
-		// Draw the player
-		cout << char(1);
+
+		CSBLOCK(csc)
+		{
+			// Set the new position of the player
+			SetConsoleCursorPosition(h, player);
+			// Set color of the player
+			SetConsoleTextAttribute(h, PLAYER_COLOR);
+			// Draw the player
+			cout << char(1);
+		}
 
 
 		// Where are we?
@@ -214,28 +261,33 @@ void main()
 		{
 			collected_apples++;
 			field[player.Y][player.X] = FieldContent::EMPTY;
-			
-			// Erase the score board
-			SetConsoleCursorPosition(h, score);
-			cout << "\t\t\t";
+			CSBLOCK(csc)
+			{
+				// Erase the score board
+				SetConsoleCursorPosition(h, score);
+				cout << "\t\t\t";
 
-			// Update score
-			SetConsoleTextAttribute(h, SCORE_COLOR);
-			SetConsoleCursorPosition(h, score);
-			cout << "Apples ( " << collected_apples << "/" << all_apples << " )";
+				// Update score
+				SetConsoleTextAttribute(h, SCORE_COLOR);
+				SetConsoleCursorPosition(h, score);
+				cout << "Apples ( " << collected_apples << "/" << all_apples << " )";
+			}
 		}
 		else if (field[player.Y][player.X] == FieldContent::ENEMY)
 		{
-			SetConsoleCursorPosition(h, player);
-			SetConsoleTextAttribute(h, ENEMY_COLOR);
-			cout << char(2);
+			CSBLOCK(csc)
+			{
+				SetConsoleCursorPosition(h, player);
+				SetConsoleTextAttribute(h, ENEMY_COLOR);
+				cout << char(2);
 
-			// Loosing information
-			SetConsoleCursorPosition(h, score);
-			cout << "\t\t\t";
-			SetConsoleTextAttribute(h, SCORE_COLOR);
-			SetConsoleCursorPosition(h, score);
-			cout << "You loose!" << endl;
+				// Loosing information
+				SetConsoleCursorPosition(h, score);
+				cout << "\t\t\t";
+				SetConsoleTextAttribute(h, SCORE_COLOR);
+				SetConsoleCursorPosition(h, score);
+				cout << "You loose!" << endl;
+			}
 			break;
 		}
 		else if (field[player.Y][player.X] == FieldContent::EMPTY)
@@ -245,17 +297,39 @@ void main()
 		// Checking whether we win
 		if (collected_apples >= all_apples *0.95)
 		{
-			system("cls");
-			cout << "You win" << endl;
+			CSBLOCK(csc)
+			{
+				system("cls");
+				cout << "You win" << endl;
+			}
 			break;
 		}
+	}
 
-		// move enemies
+	
+	gameOver = true;
+	WaitForSingleObject(hThread, 1000);
+	CloseHandle(hThread);
+	system("pause");
+
+}
+
+
+
+DWORD moveEnemies(CriticalSectionContainer* pcss)
+{
+
+	while (!gameOver)
+	{
+		Sleep(10);
 		for (int i = 0; i < ene_count; i++)
 		{
-			// Remove enemies[i]
-			SetConsoleCursorPosition(h, enemies[i]);
-			cout << " ";
+			CSBLOCK(*pcss)
+			{
+				// Remove enemies[i]
+				SetConsoleCursorPosition(h, enemies[i]);
+				cout << " ";
+			}
 			field[enemies[i].Y][enemies[i].X] = EMPTY;
 
 			// Generate next move direction
@@ -281,15 +355,15 @@ void main()
 				break;
 			}
 
-			// Put enemy and draw him
-			SetConsoleCursorPosition(h, enemies[i]);
-			field[enemies[i].Y][enemies[i].X] = ENEMY;
-			SetConsoleTextAttribute(h, ENEMY_COLOR);
-			cout << char(2);
-
+			CSBLOCK(*pcss)
+			{
+				// Put enemy and draw him
+				SetConsoleCursorPosition(h, enemies[i]);
+				field[enemies[i].Y][enemies[i].X] = ENEMY;
+				SetConsoleTextAttribute(h, ENEMY_COLOR);
+				cout << char(2);
+			}
 		}
 	}
-	
-	system("pause");
-
+	return 0;
 }
