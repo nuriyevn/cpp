@@ -10,9 +10,17 @@ HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
 enum FieldContent
 {
 	EMPTY = 0,
-	WALL,
-	APPLE,
-	ENEMY
+	WALL = 1,
+	APPLE = 2,
+	ENEMY = 3
+};
+
+enum KeyboardKeys{
+	UP = 72,
+	LEFT = 75,
+	RIGHT = 77,
+	DOWN = 80,
+	ESCAPE = 27
 };
 
 enum ConsoleColors
@@ -35,158 +43,206 @@ enum ConsoleColors
 	white = 15
 };
 
+int ENEMY_COLOR = light_red;
+int PLAYER_COLOR = light_blue;
+int APPLE_COLOR = yellow;
+int WALL_COLOR = light_gray;
+int SCORE_COLOR = light_magenta;
 
 void main()
 {
+
+
+
+	// Setting the width of caret
 	srand(time(0));
 	CONSOLE_CURSOR_INFO cci;
 	cci.bVisible = true;
 	cci.dwSize = 50;
 	SetConsoleCursorInfo(h, &cci);
+
+	// Setting the frame of the console window
 	system("mode con cols=50 lines=25");
 	system("title PAC MAN");
 	
 	int collected_apples = 0;
 	int all_apples = 0;
 
+
+	// We have field matrix 24x24
 	const int cols = 24, lines = 24;
 	int field[lines][cols];
+
+	// outer loop
 	for (int i = 0; i < lines; i++)
 	{
+		// inner loop
 		for (int j = 0; j < cols; j++)
 		{
+			// filling boundaries of the game field with walls
 			if (i == 0 || j == 0 || i == lines - 1 || j == cols - 1)
 			{
-				field[i][j] = 1;
+				field[i][j] = WALL; // WALL
 			}
+			// Filling non-boundary cells with either WALLs - 20% or Apples = 10%, Empty space = 70%
 			else
 			{
 				int temp = rand() % 100;
 				if (temp >= 0 && temp <= 20)
-					field[i][j] = 1;
+					field[i][j] = WALL;
 				else if (temp > 20 && temp < 30)
 				{
-					field[i][j] = 2;
+					field[i][j] = APPLE;
 					all_apples++;
 				}
-				else if (temp == 35)
-				{//	field[i][j] = 3;
-				}
 				else
-					field[i][j] = 0;
+					field[i][j] = EMPTY;
 			}
-			if (field[i][j] == 1)
+
+			if (field[i][j] == WALL)
 			{
-				SetConsoleTextAttribute(h, light_gray);
+				SetConsoleTextAttribute(h, WALL_COLOR);
 				cout << char(177);
 			}
-			else if (field[i][j] == 2)
+			else if (field[i][j] == APPLE)
 			{
-				SetConsoleTextAttribute(h, yellow);
+				SetConsoleTextAttribute(h, APPLE_COLOR);
 				cout << ".";
 			}
-			else if (field[i][j] == 3)
+			else if (field[i][j] == EMPTY)
 			{
-				SetConsoleTextAttribute(h, light_red);
-				cout << char(2);
+				cout << " ";
 			}
 			else
 			{
-				cout << " ";
+
 			}
 		}
 		cout << endl;
 	}
 
+	// LEGEND PART: Details of game
+	
+	// Output information about score
 	COORD score;
 	score.X = 26;
 	score.Y = 2;
 	SetConsoleCursorPosition(h, score);
-	SetConsoleTextAttribute(h, light_magenta);
+	SetConsoleTextAttribute(h, SCORE_COLOR);
 	cout << "Apples ( " << collected_apples << "/" << all_apples << " )";
 
-
+	// Initializa player position at start and draw player
+	// @todo check that initial position is logically correct
 	COORD player;
 	player.X = 1;
 	player.Y = 1;
 	SetConsoleCursorPosition(h, player);
-	SetConsoleTextAttribute(h, light_blue);
+	SetConsoleTextAttribute(h, PLAYER_COLOR);
 	cout << char(1);
 
+	
 	const int ene_count = 5;
 	COORD enemies[ene_count];
+
+	// Generating inital positin of enemies and draw them all
 	for (int i = 0; i < ene_count; i++)
 	{
 		enemies[i].X = rand() % (cols - 2) + 1;
 		enemies[i].Y = rand() % (lines - 2) + 1;
-		if (field[enemies[i].Y][enemies[i].X] != 0)
+		if (field[enemies[i].Y][enemies[i].X] != EMPTY)
 		{
+			// revert transaction, try to generate enemy again
 			i--;
 			continue;
 		}
-		field[enemies[i].Y][enemies[i].X] = 3;
+
+		// Drawing enemies
+		field[enemies[i].Y][enemies[i].X] = ENEMY;
 		SetConsoleCursorPosition(h, enemies[i]);
-		SetConsoleTextAttribute(h, light_red);
+		SetConsoleTextAttribute(h, ENEMY_COLOR);
 		cout << char(2);
 	}
 
 
+
 	while (1)
 	{
+		// MOVING THE PLAYER
+
+		// Handling keyboard key code
 		int code = _getch(); // conio.h
+
+		// updating position of cursor to the old position
 		SetConsoleCursorPosition(h, player);
+
+		// Remove the image of player
 		cout << " ";
+
+		// Handling keyboard events
 		switch (code)
 		{
-		case 72: // up
-			if (field[player.Y - 1][player.X] != 1)
+		case UP: 
+			if (field[player.Y - 1][player.X] != WALL)
 				player.Y--;
 			break;
-		case 75: // left
-			if (field[player.Y][player.X - 1] != 1)
+		case LEFT:
+			if (field[player.Y][player.X - 1] != WALL)
 				player.X--;
 			break;
-		case 77: // right
-			if (field[player.Y][player.X + 1] != 1)
+		case RIGHT:
+			if (field[player.Y][player.X + 1] != WALL)
 				player.X++;
 			break;
-		case 80: // down
-			if (field[player.Y + 1][player.X] != 1)
+		case DOWN:
+			if (field[player.Y + 1][player.X] != WALL)
 				player.Y++;
 			break;
-		case 27:
+		case ESCAPE:
 			exit(0);
 			break;
 		}
+		// Set the new position of the player
 		SetConsoleCursorPosition(h, player);
-		SetConsoleTextAttribute(h, light_blue);
+		// Set color of the player
+		SetConsoleTextAttribute(h, PLAYER_COLOR);
+		// Draw the player
 		cout << char(1);
 
+
+		// Where are we?
 		if (field[player.Y][player.X] == FieldContent::APPLE) // 
 		{
 			collected_apples++;
 			field[player.Y][player.X] = FieldContent::EMPTY;
+			
+			// Erase the score board
 			SetConsoleCursorPosition(h, score);
 			cout << "\t\t\t";
-			SetConsoleTextAttribute(h, light_magenta);
+
+			// Update score
+			SetConsoleTextAttribute(h, SCORE_COLOR);
 			SetConsoleCursorPosition(h, score);
 			cout << "Apples ( " << collected_apples << "/" << all_apples << " )";
 		}
-		// new_code
 		else if (field[player.Y][player.X] == FieldContent::ENEMY)
 		{
-			//field[player.Y][player.X] = FieldContent::EMPTY;
-			for (int i = 0; i < ene_count; i++)
-			{
-				if (enemies[i].X == -1)
-					continue;
-				if (player.Y == enemies[i].Y && player.X == enemies[i].X)
-					enemies[i].X = -1;
-			}
-			//SetConsoleTextAttribute(h, light_magenta);
+			SetConsoleCursorPosition(h, player);
+			SetConsoleTextAttribute(h, ENEMY_COLOR);
+			cout << char(2);
+
+			// Loosing information
+			SetConsoleCursorPosition(h, score);
+			cout << "\t\t\t";
+			SetConsoleTextAttribute(h, SCORE_COLOR);
+			SetConsoleCursorPosition(h, score);
+			cout << "You loose!" << endl;
+			break;
 		}
-		
-//
+		else if (field[player.Y][player.X] == FieldContent::EMPTY)
+		{
+		}
+
+		// Checking whether we win
 		if (collected_apples >= all_apples *0.95)
 		{
 			system("cls");
@@ -194,48 +250,44 @@ void main()
 			break;
 		}
 
-
-
-
+		// move enemies
 		for (int i = 0; i < ene_count; i++)
 		{
+			// Remove enemies[i]
 			SetConsoleCursorPosition(h, enemies[i]);
 			cout << " ";
-			field[enemies[i].Y][enemies[i].X] = 0;
-			if (enemies[i].X == -1)
-				continue;
+			field[enemies[i].Y][enemies[i].X] = EMPTY;
+
+			// Generate next move direction
+			// We can only move to empty position
 			int direction = rand() % 4;
 			switch (direction)
 			{
 			case 0: // up
-				if (field[enemies[i].Y - 1][enemies[i].X] == 0)
+				if (field[enemies[i].Y - 1][enemies[i].X] == EMPTY)
 					enemies[i].Y--;
 				break;
 			case 1: // left
-				if (field[enemies[i].Y][enemies[i].X - 1] == 0)
+				if (field[enemies[i].Y][enemies[i].X - 1] == EMPTY)
 					enemies[i].X--;
 				break;
 			case 2: // right
-				if (field[enemies[i].Y][enemies[i].X + 1] == 0)
+				if (field[enemies[i].Y][enemies[i].X + 1] == EMPTY)
 					enemies[i].X++;
 				break;
 			case 3: // down
-				if (field[enemies[i].Y + 1][enemies[i].X] == 0)
+				if (field[enemies[i].Y + 1][enemies[i].X] == EMPTY)
 					enemies[i].Y++;
 				break;
 			}
+
+			// Put enemy and draw him
 			SetConsoleCursorPosition(h, enemies[i]);
+			field[enemies[i].Y][enemies[i].X] = ENEMY;
+			SetConsoleTextAttribute(h, ENEMY_COLOR);
+			cout << char(2);
 
-			if (enemies[i].X != -1)
-			{
-				field[enemies[i].Y][enemies[i].X] = 3;
-				SetConsoleTextAttribute(h, light_red);
-				cout << char(2);
-			}
 		}
-
-
-
 	}
 	
 	system("pause");
