@@ -8,7 +8,7 @@ using std::cout;
 using std::endl;
 using std::string;
 using std::size_t;
-
+using std::hex;
 class CtextBlock
 {
 
@@ -30,28 +30,31 @@ public:
 
 	CtextBlock(const CtextBlock& rhs)
 	{
+		cout << "I'm copy constructor" << endl;
 		const size_t len = strlen(rhs.pText) + 1;
-		char *newText = new char[len];
-		strcpy(newText, rhs.pText);
-		delete[] pText;
-		pText = newText;
+		pText = new char[len];
+		strcpy(pText, rhs.pText);
 	}
+	
 	const CtextBlock&  operator=(const CtextBlock& rhs)
 	{
 		if (this != &rhs)
 		{
 			const size_t len = strlen(rhs.pText) + 1;
-			char *newText = new char[len];
-			strcpy(newText, rhs.pText);
 			delete[] pText;
-			pText = newText;
+			pText = new char[len];
+			strcpy(pText, rhs.pText);
 		}	
 		return *this;
 	}
-	char& operator[](std::size_t position) const
+	char& operator[](size_t position) const
 	{
 		return pText[position];
 	}
+/*	const char& operator[](size_t position) const
+	{
+		return pText[position];
+	}*/
 	size_t length() const;
 	void print() const
 	{
@@ -82,19 +85,26 @@ size_t CtextBlock::length() const
 
 int main()
 {
+	
 	CtextBlock tb("This is SPARTAAAAAAAA!")	;
+
+	cout << "tb address = " << hex << &tb << endl;
+
 	CtextBlock tb2(tb);
+	cout << "tb2 addr = " << hex << &tb2 << endl;
 	tb2[0] = 't';
+
 	tb2.print();
 
 
 	const CtextBlock tb3("Hello");
 	tb = tb2;	
+	cout << "tb3 addr = "  << hex << &tb3 << endl;
 	//tb3 = tb2; // illegal, as bitwise constancy is at work
 
-	//char& ptb = tb3[1];
-	//ptb = 'H'; // legal, compiler won't complain, but ruins logical constancy
+	 char ptb = &tb3[0];
+	 ptb = 'H'; // legal, compiler won't complain, but ruins logical constancy
 	
-	tb3.print();
+	//tb3.print();
 
 }
