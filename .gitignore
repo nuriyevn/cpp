@@ -1,0 +1,6 @@
+*.iml
+*.o
+*.obj
+*.out
+*.exe
+.idea/
