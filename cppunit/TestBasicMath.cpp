@@ -66,7 +66,7 @@ int main()
 
 	// register listener for collecting the test-results
 	CPPUNIT_NS::TestResultCollector collectedresults;	
-	testresult.addListener (&collectedresults;
+	testresult.addListener (&collectedresults);
 	
 	// register listener for per-test progress output
 	CPPUNIT_NS::BriefTestProgressListener progress;
@@ -79,7 +79,7 @@ int main()
 
 	// output results in compiler-format
 	CPPUNIT_NS::CompilerOutputter compileroutputter(&collectedresults, std::cerr);
-	compilroutputter.write();
+	compileroutputter.write();
 
 	// output XML for jenkins cppunit plugin
 	ofstream xmlFileOut("cppTestBasicMathResults.xml");
