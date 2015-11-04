@@ -9,7 +9,7 @@
 #include <cppunit/TestResult.h>
 #include <cppunit/TestResultCollector.h>
 #include <cppunit/TestRunner.h>
-#include <cppunit/BriefTestProgressListener.h>
+//#include <cppunit/BriefTestProgressListener.h>
 #include <cppunit/CompilerOutputter.h>
 #include <cppunit/XmlOutputter.h>
 #include <netinet/in.h>
@@ -69,8 +69,8 @@ int main()
 	testresult.addListener (&collectedresults);
 	
 	// register listener for per-test progress output
-	CPPUNIT_NS::BriefTestProgressListener progress;
-	testresult.addListener(&progress);
+	//CPPUNIT_NS::BriefTestProgressListener progress;
+	//testresult.addListener(&progress);
 
 	// insert test-suite at test-runner by registry
 	CPPUNIT_NS::TestRunner testrunner;
