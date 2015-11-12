@@ -36,3 +36,5 @@ chain_of_resp:
 	g++ -Wfatal-errors chain_of_resp.cpp -o chain_of_resp && ./chain_of_resp
 syslog: syslog.c
 	gcc syslog.c -o syslog && ./syslog
+clean:
+	rm -f *.exe *.obj *.o *.out
