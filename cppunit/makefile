@@ -1,3 +1,5 @@
+complexnum: ComplexNumberTest.cpp
+	g++ -c ComplexNumberTest.cpp -o complex.o -lcppunit -IC:/cygwin64/usr/include
 cppunit: basicmath.o testbasicmath.o
 	g++ -Wfatal-errors basicmath.o testbasicmath.o -o cppunit -lcppunit && ./cppunit
 basicmath.o: CBasicMath.cpp CBasicMath.hpp
