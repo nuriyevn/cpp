@@ -1,73 +1,69 @@
 #include "Complex.hpp"
 
-template <typename T>
-Complex<T>::Complex()
-   : real((T)0), im((T)0)
+Complex::Complex()
+   : real(0.0), im(0.0)
 {
 }
 
-template <typename T>
-Complex<T>::Complex(T r, T i)
+Complex::Complex(double r)
+   : real(r), im(0.0)
+{
+}
+
+Complex::Complex(double r, double i)
    : real(r), im(i)
 {   
 }
 
-template <typename T>
-Complex<T>::~Complex()
+Complex::~Complex()
 {
 }
 
-template <typename T>
-Complex<T>::Complex(const Complex& right)
+Complex::Complex(const Complex& right)
    : real(right.real), im(right.im)
 {
 }
 
-template <typename T>
-const Complex<T>& Complex<T>::operator=(const Complex& right)
+const Complex& Complex::operator=(const Complex& right)
 {
 }
 
 
+bool Complex::operator==(const Complex& right)
+{
+   
+   double this_im = this->im;
+   double this_real = this->real;
 
-template <typename T>
-bool Complex<T>::operator==(const Complex& right) const
+   return (isFloatEqual(right.im, this_im) 
+            && 
+           isFloatEqual(right.real, this_real));
+}
+bool Complex::operator!=(const Complex& right) const
 {
 }
 
-template <typename T>
-bool Complex<T>::operator!=(const Complex& right) const
+
+Complex& Complex::operator+(const Complex& right)
+{
+   
+}
+
+Complex& Complex::operator-(const Complex& right)
 {
 }
 
-
-template <typename T>
-Complex<T>& Complex<T>::operator+(const Complex& right)
+Complex& Complex::operator*(const Complex& right)
 {
 }
 
-template <typename T>
-Complex<T>& Complex<T>::operator-(const Complex& right)
+Complex& Complex::operator/(const Complex& right)
 {
 }
 
-template <typename T>
-Complex<T>& Complex<T>::operator*(const Complex& right)
-{
-}
-
-template <typename T>
-Complex<T>& Complex<T>::operator/(const Complex& right)
-{
-}
-
-template <typename T>
-ostream& operator<<(ostream& out, const Complex<T>& right)
-{
-}
-template <typename T>
-istream& operator>>(istream& out, const Complex<T>& right)
-{
+bool Complex::isFloatEqual(double d1, double d2)
+{  
+   return (fabs(d1-d2)<D_EPSILON);
 }
 
 
