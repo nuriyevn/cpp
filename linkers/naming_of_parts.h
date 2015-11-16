@@ -16,7 +16,10 @@ static int y_global_uninit;
 
 // This is the definition of a initialized global variable, albeit
 // one that can only be accessed by name in this C file
-static int z_global;
+static int y_global_init = 2;
+
+// This is a declaration of a global variable that exists somewhere else in the program
+extern int z_global;
 
 // This is a declaration of a function that exists somewhere else 
 // in the program (you can ad "extern" beforehand if you like, but it's
