@@ -4,7 +4,8 @@
 #include <iostream>
 #include <cstring>
 #include <cmath>
-const double D_EPSILON = 0.000001;
+
+const double D_EPSILON = 0.01;
 
 using namespace std;
 
@@ -23,6 +24,9 @@ public:
    Complex& operator-(const Complex& right);
    Complex& operator*(const Complex& right);
    Complex& operator/(const Complex& right);
+   double getReal();
+   double getImag();
+   
 
    friend ostream& operator<<(ostream& out, const Complex& cnum)
    {
@@ -34,8 +38,8 @@ public:
       in >> cnum.real >> cnum.im;
       return in;
    }
-private:
-   bool isFloatEqual(double d1, double d2);
+   static bool isFloatEqual(double d1, double d2);
+public:
    double real;
    double im;
 };

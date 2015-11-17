@@ -53,6 +53,14 @@ int main()
    // Using suite method
 
    CppUnit::TextUi::TestRunner runner;
+   CppUnit::TestFactoryRegistry &registry = CppUnit::TestFactoryRegistry::getRegistry();
+   runner.addTest(registry.makeTest());
+
+   bool wasSuccessful = runner.run();
+   if (wasSuccessful)
+      cout << "Was successful" << endl;
+   else
+      cout << "Was unsuccessful" << endl;
    
    Complex c(7);
    cout << c << endl;

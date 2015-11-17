@@ -1,5 +1,11 @@
 complexclass: Complex.hpp Complex.cpp
 	g++ -Wfatal-errors -c Complex.cpp -o ./complexclass.o
+newtest: complexclass
+	g++ -Wfatal-errors newtest.cpp complexclass.o -lcppunit -o newtest.out && ./newtest.out
+
+
+
+
 complexmain: main.cpp complexclass complextestcase complexfixture complexsuite
 	g++ -Wfatal-errors main.cpp complexclass.o complextestcase.o complexfixture.o complexsuite.o -o complexmain.out -lcppunit && ./complexmain.out
 complextestcase: ComplexNumberTest.cpp complexclass
