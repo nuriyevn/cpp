@@ -5,7 +5,7 @@ CppUnit::Test *ComplexNumberSuite::suite()
    CppUnit::TestSuite *suiteOfTests = new CppUnit::TestSuite("ComplexNumberFixture");
 
    suiteOfTests->addTest(new CppUnit::TestCaller<ComplexNumberFixture>("testEquality", &ComplexNumberFixture::testEquality));
-   suiteOfTests->addTest(new CppUnit::TestCalled<ComplexNumberFixture>("testAddition", &ComplexNumberFixture::testAddition));
+   suiteOfTests->addTest(new CppUnit::TestCaller<ComplexNumberFixture>("testAddition", &ComplexNumberFixture::testAddition));
 
    return suiteOfTests;
 }

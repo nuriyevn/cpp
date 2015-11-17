@@ -1,5 +1,6 @@
 #include <cppunit/TestCase.h>
 #include <cppunit/TestFixture.h>
+#include <cppunit/ui/text/TestRunner.h>
 #include <cppunit/ui/text/TextTestRunner.h>
 #include <cppunit/extensions/HelperMacros.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>

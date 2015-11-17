@@ -7,13 +7,12 @@
 #include "Complex.hpp"
 #include "ComplexNumberTest.hpp"
 #include "ComplexNumberFixture.hpp"
+#include "ComplexNumberSuite.hpp"
 
 // Std libraries
 #include <iostream>
 #include <cstring>
 using namespace std;
-
-
 
 int main()
 {
@@ -35,24 +34,26 @@ int main()
    testForAddition.run(&resultOfAddition);
 
    // Using TestSuite   
+/* // Math Suite
    CppUnit::TestSuite math_suite;
-// CppUnit::Test *pointer = &math_suite;
    math_suite.addTest(new CppUnit::TestCaller<ComplexNumberFixture> ("testAddition", &ComplexNumberFixture::testAddition));
-
+*/
    CppUnit::TestSuite suite;
    CppUnit::TestResult suite_result;
-   
+  
    suite.addTest(new CppUnit::TestCaller<ComplexNumberFixture> ("testEquality", &ComplexNumberFixture::testEquality));
 
    suite.addTest(new CppUnit::TestCaller<ComplexNumberFixture> ("testAddition", &ComplexNumberFixture::testAddition));
 
-   // suite.addTest(&math_suite);
+   suite.addTest(ComplexNumberSuite::suite());
 
    suite.run(&suite_result);
 
-   // Using suite method
    
+   // Using suite method
 
+   CppUnit::TextUi::TestRunner runner;
+   
    Complex c(7);
    cout << c << endl;
 }
