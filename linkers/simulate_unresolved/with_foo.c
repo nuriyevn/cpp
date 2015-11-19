@@ -1,8 +1,8 @@
-int foo()
+int foo(int a, int b)
 {
 }
 
 int main()
 {
-   foo();
+   foo(3, 4);
 }
