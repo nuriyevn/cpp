@@ -1,0 +1,7 @@
+1. Details of how and when basic class's ctor are called during derived class's ctor are called.
+rule 12
+
+2. What is the purpose of Uncopyable private inheritance in HomeForSale ?
+rule 32 and 39
+
+3. Why Uncopyalbe destructor should not be virtual? rule 7
