@@ -25,10 +25,30 @@ public:
     }
 };
 
+
+class Complexity
+{
+public:
+    int numberStart;
+    int numberEnd;
+    int resultStart;
+    int resultEnd;
+
+    string name;
+    Complexity(int numberStart, int numberEnd, int resultStart, int resultEnd,  string name)
+        : numberStart(numberStart), numberEnd(numberEnd),
+         resultStart(resultStart), resultEnd(resultEnd), name(name)
+    {
+    }
+};
+
 class Dice
 {
 public:
     vector<Side> sides;
+    Complexity complexity;
+    Dice(Complexity& complexity)
+        : complexity(complexity)    {    }
 
     vector<Side>& getSides()
     {
@@ -41,7 +61,7 @@ public:
         std::random_device rd;  //Will be used to obtain a seed for the random number engine
         //std::ranlux48 gen(rd()); //Standard mersenne_twister_engine seeded with rd()
         std::mt19937 gen(rd());
-        std::uniform_int_distribution<> dis(1, 10);
+        std::uniform_int_distribution<> dis(complexity.numberStart, complexity.numberEnd);
         return dis(gen);
     }
     int sign()
@@ -62,7 +82,7 @@ public:
 
     bool checkPart(int result)
     {
-        if (result >= 0 && result <= 10)
+        if (result >= complexity.resultStart && result <= complexity.resultEnd)
             return true;
         else
             return false;
@@ -134,11 +154,10 @@ public:
     }
 };
 
-
-
 int main()
 {
-    Dice dice;
+    Complexity easy(1, 19, 1, 20, "easy");
+    Dice dice(easy);
     initscr();
 
     const int penalty = 50;
@@ -226,6 +245,7 @@ int main()
         dice.getSides().pop_back();
         dice.getSides().pop_back();
     }
+
 
     endwin();
     return 0;
