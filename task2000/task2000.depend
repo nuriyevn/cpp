@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1518447885 source:/home/nusik/cpp/task2000/main.cpp
+	<iostream>
+	<random>
+	<ncurses.h>
+	<cstdlib>
+	<unistd.h>
+	<time.h>
+

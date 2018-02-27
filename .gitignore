@@ -6,3 +6,5 @@
 .idea/
 *.xml
 *.log
+**/bin
+**/obj
