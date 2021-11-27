@@ -112,33 +112,19 @@ public:
             {
                 nth->next->prev = nth_prev;
                 nth->prev->next = nth_next;
-
-                nth->value = v;
-                nth->next = head;
-                nth->prev = nullptr;
-                head->prev = nth;
-                head = nth;
-            }
-            else if (nth_next && !nth_prev) // this is head  and further elements present)
-            {
-                nth->value = v;
             }
             else if (!nth_next && nth_prev) // this is tail and previous elements present)
             {
                 nth->prev->next = nullptr;
 
                 tail = nth_prev;
+            }
 
-                nth->value = v;
-                nth->next = head;
-                nth->prev = nullptr;
-                head->prev = nth;
-                head = nth;
-            }
-            else if (!nth_next && !nth_prev) // head is a tall
-            {
-                nth->value = v;
-            }
+            nth->value = v;
+            nth->next = head;
+            nth->prev = nullptr;
+            head->prev = nth;
+            head = nth;
         }
 
     }
