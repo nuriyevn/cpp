@@ -1,0 +1,36 @@
+{
+    "name": "C++ Launch",
+    "type": "cppdbg",
+    "request": "launch",
+    "program": "${workspaceFolder}/build/CPP_BUILD",
+    "args": ["arg1", "arg2"],
+    "environment": [{ "name": "config", "value": "Debug" }],
+    "cwd": "${workspaceFolder}",
+    "configurations": [
+        {
+            "name": "(lldb) Launch template part func specialization",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/templates/PartialFunctionSpecialization",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}/templates",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb"
+        },
+        {
+            "name": "(lldb) Launch program3",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/program3",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb"
+        }
+    ]
+  }
+  
