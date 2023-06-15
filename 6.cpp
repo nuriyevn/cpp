@@ -17,7 +17,7 @@ int A::getValue() const  { return val; }
 
 A& operator+ (A &sa, const int a)
 {	
-sa.val += a;
+	sa.val += a;
 	return sa;
 } 
 
@@ -27,5 +27,4 @@ int main()
 	w + 3;
 	q = q + 2;
 	w = w + q.getValue();
-//	cout << 		
 }

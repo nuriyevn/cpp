@@ -8,6 +8,20 @@
     "cwd": "${workspaceFolder}",
     "configurations": [
         {
+            "name": "(Windows) Launch",
+            "type": "cppvsdbg",
+            "request": "launch",
+            "program": "enter program name, for example ${workspaceFolder}/time.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "console": "externalTerminal"
+        },
+        
+
+      
+        {
             "name": "(lldb) Launch template part func specialization",
             "type": "cppdbg",
             "request": "launch",

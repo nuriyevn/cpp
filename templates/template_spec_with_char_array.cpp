@@ -1,15 +1,16 @@
+// TODO : remove or improve this example
 #include <iostream>
 // difference between passing array, fixed-sized array and base address of array as a function parameter
 
 using namespace std;
 
 // only use when the size of the array is relevant
+// this is really rare case though
 void f(int (&a)[11])
 {
 	cout << sizeof(a) << endl;
 }
 
-// interesting template:
 void func(const char str[10])
 {
 	cout << "specialize template for 10 itesm" <<  str << endl;

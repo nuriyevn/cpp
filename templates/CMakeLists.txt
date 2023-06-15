@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.1)
-
+set(CMAKE_CXX_STANDARD 20)
 project(cpp_templates)
 
 add_executable(PartialFunctionSpecialization part_func_spec.cpp)
+add_executable(number_of_instantiations number_of_instantiations.cpp)
+add_executable(instantiation_without_calling instantiation_without_calling.cpp)
+add_executable(template_spec_with_char_array template_spec_with_char_array.cpp)

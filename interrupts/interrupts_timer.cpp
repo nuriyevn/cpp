@@ -1,7 +1,19 @@
 #include <iostream>
 #include <ctime>
-#include <unistd.h>
 #include <signal.h>
+// is not tested thoroughly
+#if __cplusplus >= 201103L || (defined(_MSC_VER) && _MSC_VER >= 1900)
+   #define cpp11plus
+   #include <chrono>
+   #include <thread>
+#else
+   #ifdef _WIN32
+   #include <Windows.h>
+   #endif
+   #ifdef linux
+   #include <unistd.h>
+   #endif
+#endif
 
 using namespace  std;
 
@@ -13,13 +25,29 @@ void intHandler(int dummy)
    cout << ("SIGINT catched. Exiting...\n");
 }
 
+inline void SLEEP(int seconds)
+{
+   int milliseconds = seconds * 1000;
+
+   #ifdef cpp11plus
+      std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
+   #else
+      #ifdef _WIN32
+      Sleep(milliseconds);
+      #elif linux
+      sleep(seconds);
+      #endif
+   #endif
+}
+
 int main	()
 {
    signal(SIGINT, intHandler);
+   int seconds = 1;
 
    while (keepRunning)
    {
-      sleep(1);
+      SLEEP(seconds);
       time_t now = time(0);
       char *dt = NULL;
       cout << "\n" << now << " seconds elapsed since Unix Epoch" << endl; 
