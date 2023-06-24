@@ -10,7 +10,7 @@ using namespace std;
 class SubscriptionBase
 {
 public:
-	virtual string GetEventName(void) const {};
+	virtual string GetEventName(void) const { return ""; };
 	virtual void  Invoke(void) const {};
 };
 

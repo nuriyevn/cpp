@@ -52,7 +52,7 @@ int main()
     foo([](bool x){});
     foo([](bool x){});
     std::cout << "Counted " << FooCounter::n << " distinct template instances of foo().\n";
-    std::cout << "Overal counted " << TotalFooCounter::n << " distinct template instances of foo().\n";
+    std::cout << "Overal counted " << TotalFooCounter::n << " template instances of foo().\n";
 
     return 0;
 }
