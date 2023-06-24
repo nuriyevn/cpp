@@ -1,7 +1,0 @@
-SubDir BT_SVCIF_SIMPLECALC onoff private ;
-
-HBLibrary basictraining_svcif_simplecalc_onoff :
-	COnOffRootService.cpp
-	COnOffComponent.cpp
-	COnOffCalculatorClient.cpp
-	;

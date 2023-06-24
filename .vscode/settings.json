@@ -67,5 +67,6 @@
         "xutility": "cpp",
         "map": "cpp",
         "xtree": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
