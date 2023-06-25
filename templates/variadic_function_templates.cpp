@@ -36,12 +36,6 @@ auto h(const auto&... args)
     return ( root(args) + ...);
 }
 
-template<typename... Ts>
-auto i(Ts &&... args)
-{
-    g()
-    return ( g(std::forward<Ts>(args)) + ... );
-}
 
 int main()
 {
