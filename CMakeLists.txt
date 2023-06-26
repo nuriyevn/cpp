@@ -6,4 +6,6 @@ add_subdirectory(templates)
 add_subdirectory(interrupts)
 add_subdirectory(design_patterns)
 add_subdirectory(cppunit)
+add_subdirectory(oop)
+add_subdirectory(overloading)
 

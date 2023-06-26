@@ -71,7 +71,7 @@ int main()
 	cout << "\nExpected 3xDEFAULT. In fact: ";
 	MyArray ma[3];
 	cout << "\nExpected 3xCUSTOM. In fact: ";
-	MyArray ba[3](7);	
+	MyArray ba[3]{{7},{7}, {7}}; // initializer-list
 	
 	cout << "b[0] = " << b[0] << endl;
 	cout << "a[0] = " << a[0] << endl;
