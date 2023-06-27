@@ -73,7 +73,12 @@
         "random": "cpp",
         "ranges": "cpp",
         "set": "cpp",
-        "span": "cpp"
+        "span": "cpp",
+        "any": "cpp",
+        "array": "cpp",
+        "condition_variable": "cpp",
+        "unordered_set": "cpp",
+        "variant": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
