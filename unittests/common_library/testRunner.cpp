@@ -1,4 +1,3 @@
-#include <iostream>
 #include "LibraryCode.hpp"
 #include <gtest/gtest.h>
 
