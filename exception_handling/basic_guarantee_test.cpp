@@ -1,9 +1,14 @@
 #include <iostream>
 #include <gtest/gtest.h>
+#include <gmock/gmock.h>
 
+TEST(DateTestSuite, ValidDateTest)
+{
+    Date
+}
 
 int main(int argc, char **argv)
 {
-    testing::InitGoogleTest();
+    testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }

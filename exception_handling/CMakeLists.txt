@@ -12,6 +12,9 @@ FetchContent_Declare(googletest
 
 FetchContent_MakeAvailable(googletest)
 
-add_executable(BasicGuarantee basic_strong_nothrow_guarantees.cpp)
+add_library(DateLibrary date.cpp)
+
+add_executable(BasicGuarantee basic_guarantee.cpp)
+target_link_libraries(BasicGuarantee DateLibrary)
 
 
