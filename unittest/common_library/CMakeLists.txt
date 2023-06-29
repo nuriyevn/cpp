@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.17)
 
 project(common_library)
 
@@ -11,10 +11,9 @@ FetchContent_Declare(googletest
         GIT_TAG release-1.12.1)
 
 
-# CMake 3.14+
 FetchContent_MakeAvailable(googletest)
 
-add_library(commonLibrary LibraryCode.cpp)
+add_library(commonLibrary STATIC LibraryCode.cpp)
 add_executable(mainApp main.cpp)
 target_link_libraries(mainApp commonLibrary)
 
@@ -25,6 +24,6 @@ enable_testing()
 #[[add_test(TestSuiteSample unitTestRunner)]]
 
 add_test(
-  NAME unitTestRunner
+  NAME TestRunner
   COMMAND $<TARGET_FILE:unitTestRunner>
 )
