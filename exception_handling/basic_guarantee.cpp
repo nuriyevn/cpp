@@ -7,4 +7,7 @@ int main(int argc, char **argv)
     std::cout << d;
     Date second(d);
     std::cout << second;
+
+    Date now = Date::now();
+    std::cout << now;
 }

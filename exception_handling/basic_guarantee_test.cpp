@@ -2,7 +2,21 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
 
-TEST(DateTestSuite, ValidDateTest)
+class DateTestFixture : public testing::Test
+{
+    public:
+        void SetUp() override;
+    private:
+        Date date;
+}
+
+void DataTestFixture::SetUp()
+{
+    cout << "SetUp called\n" << endl;
+    cout << date;
+}
+
+TEST_F(DateTestFixture , ValidDateTest)
 {
     Date
 }

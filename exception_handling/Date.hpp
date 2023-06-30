@@ -1,4 +1,6 @@
 #include <iostream>
+#include <ctime>
+
 using namespace std;
 
 class Date
@@ -15,7 +17,8 @@ public:
     int GetDay() const { return day;}
     int GetMonth() const { return month;}
     int GetYear() const { return year;}
-    Date(const int day, const int month, const int year) {};
-    Date(const Date& rhs) {};
+    Date(const int day, const int month, const int year) { if (isValid(day, month, year)) { this->day = day, this->month = month, this->year = year; }};
+    Date(const Date& rhs) { this->day = rhs.day; this->month = rhs.month; this->year = rhs.year; };
     friend ostream& operator<<(ostream& out, const Date& d);
+    static Date now() {  time_t now = time(0); tm *gmtm = gmtime(&now); return Date(gmtm->tm_mday, gmtm->tm_mon + 1, gmtm->tm_year + 1900); }
 };
