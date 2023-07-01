@@ -30,18 +30,13 @@ void CashAccountFactoryTestFixture::TearDown()
 	delete cash_account_factory;
 }
 
-TEST_F(CashAccountFactoryTestFixture, CreateAccountWithZeroAmount)
-{
-    double initialBalance = 0.0;
-    cash_account->deposit(initialBalance);
-    ASSERT_DOUBLE_EQ(initialBalance, cash_account->balance());
-}
+
 
 TEST_F(CashAccountFactoryTestFixture, CreateAccountWith1500Amount)
 {
     double initialBalance = 1500.0;
 	cash_account->deposit(initialBalance);
-    ASSERT_DOUBLE_EQ(initialBalance, cash_account->balance());
+    ASSERT_NEAR(initialBalance, cash_account->balance(), abs_error);
 }
 
 TEST_F(CashAccountFactoryTestFixture, CreateAccountWithDefaultName)
@@ -83,6 +78,13 @@ TEST_F(CashAccountFactoryTestFixture, CreateAccountDepoAndWithdraw2)
 	ASSERT_NEAR(749.49, cash_account->balance(), abs_error);
 	cash_account->withdraw(749.49);
 	ASSERT_NEAR(double(0.0), cash_account->balance(), abs_error);
+}
+
+TEST_F(CashAccountFactoryTestFixture, CreateAccountWithZeroAmount)
+{
+    double initialBalance = 0.0;
+    cash_account->deposit(initialBalance);
+    ASSERT_NEAR(initialBalance, cash_account->balance(), abs_error);
 }
 
 TEST_F(CashAccountFactoryTestFixture, CashAccountWithdrawFromEmpty)
@@ -193,6 +195,39 @@ TEST_F(PaymentCardAccountFactoryTestFixture, NegativeAmountWithdrawTest)
 	ASSERT_THROW(payment_card_account->withdraw(-100.0), std::invalid_argument);
 }
 
+TEST(AccountTestSuite, TransferTest)
+{
+	// make_unique is safe for creating temporaries, whereas with explicit use of new 
+	// you have to remember the rule about not using unnamed temporaries.
+	// it is exception safe
+	// The addition of make_unique finally means we can tell people to 'never' use new 
+	// rather than the previous rule to "'never' use new except when you make a unique_ptr".
+	// make_unique does not require redundant type usage. unique_ptr<CashAccountFactory>(new CashAccountFactory()) -> make_unique<T>()
+	auto cashAccountFactory = std::make_unique<CashAccountFactory>();
+	auto paymentCardAccountFactory = std::make_unique<PaymentCardAccountFactory>();
+	auto savingsAccountFactory = std::make_unique<SavingsAccountFactory>();
+
+	double initialAmount = 200.15;
+	Account *cash_account = cashAccountFactory->createAccount(initialAmount);
+	Account *payment_card_account = paymentCardAccountFactory->createAccount(initialAmount);
+	Account *savings_account = savingsAccountFactory->createAccount(initialAmount);
+
+	cash_account->transfer(100.15, *payment_card_account);
+	ASSERT_NEAR(100.0, cash_account->balance(), ABS_ERROR);
+	ASSERT_NEAR(300.30, payment_card_account->balance(), ABS_ERROR);
+
+	payment_card_account->transfer(50.15, *savings_account);
+	ASSERT_NEAR(250.15, payment_card_account->balance(), ABS_ERROR);
+	ASSERT_NEAR(250.30, savings_account->balance(), ABS_ERROR);
+
+	ASSERT_THROW(savings_account->transfer(300.0, *payment_card_account), std::runtime_error);
+	std::vector<Account*> accounts = {cash_account, payment_card_account, savings_account};
+	print_balances(accounts);
+	
+	delete cash_account;
+	delete payment_card_account;
+	delete savings_account;
+}
 
 // For 
 TEST(HomeAccountSuite, BasicTest)

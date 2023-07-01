@@ -17,7 +17,7 @@ int Account::deposit(double amount)
 	if (amount < 0.0)
 		throw std::invalid_argument("amount is invalid");
 	
-	if (current + amount > current)
+	if (current + amount >= current)
 	{ 
 		current += amount;
 		return 1;
@@ -25,6 +25,7 @@ int Account::deposit(double amount)
 	else
 	{
 		cout << "Deposit operation failed." << endl;
+		throw std::runtime_error("Deposit operation failed.");
 		return 0;
 	}
 }
@@ -50,20 +51,20 @@ void Account::transfer(double amount, Account &a)
 {
 	if (amount < 0.0)
 		throw std::invalid_argument("amount is invalid");
+	double fromBalance = this->balance();
+	double toBalance = a.balance();
 
-	if (this->withdraw(amount))
+	this->withdraw(amount);
+	if (!a.deposit(amount))
 	{
-		if (!a.deposit(amount))
-		{
-			cout << "Error while transferring funds." << endl;		
-			return;
-		}
-	}
-	else {
-		cout << "Error while transferring funds." << endl;
-		//logger->writeToLogFile()
+		cout << "Error while transferring funds." << endl;		
 		return;
 	}
+	else
+	{
+		
+	}
+	
 	cout << "Transaction date: " << getTransactionDate(true) << endl;
 	//logger->writeToLogFile()
 }
