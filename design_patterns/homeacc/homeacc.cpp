@@ -11,6 +11,8 @@ using namespace std;
 
 static Logger *logger;
 
+// Based on AbstractFactory pattern
+
 int Account::deposit(double amount) 
 {
 	//logger->writeToLogFile("")
