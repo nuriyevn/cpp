@@ -2,6 +2,8 @@
 
 using namespace std;
 
+// Just a base class for all controls
+// Kind of Widget class, doesn't matter here.
 class AnimalToy
 {
 public:
@@ -11,6 +13,7 @@ public:
 	}
 };
 
+// Button
 class Cat : public AnimalToy
 {
 protected:
@@ -19,6 +22,7 @@ protected:
 	} 	
 };
 
+// TextField
 class Bear : public AnimalToy
 {
 protected:
@@ -27,6 +31,7 @@ protected:
 	}	
 };
 
+// LinuxButton
 class WoodenCat : public Cat
 {
 public:
@@ -35,7 +40,7 @@ public:
 	}
 };
 
-
+//WinButton
 class TeddyCat : public Cat
 {
 public:
@@ -44,6 +49,7 @@ public:
 	}
 };
 
+// LinuxTextField
 class WoodenBear : public Bear
 {
 public:
@@ -52,6 +58,7 @@ public:
 	}
 };
 
+//WinTextField
 class TeddyBear : public Bear
 {
 public:
@@ -60,7 +67,7 @@ public:
 	}
 };
 
-
+// AbstractFactory
 class IToyFactory
 {
 public:
@@ -68,6 +75,8 @@ public:
 	virtual Cat *GetCat() = 0;
 };
 
+
+// WinFactory
 class TeddyToysFactory : public IToyFactory
 {
 public:
@@ -81,6 +90,7 @@ public:
 	}
 };
 
+//LinuxFactory
 class WoodenToysFactory : public IToyFactory
 {
 public:

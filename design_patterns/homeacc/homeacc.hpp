@@ -3,6 +3,7 @@ const std::string strDefaultPaymentCardAccount = "DefaultPaymentCardAccount";
 const std::string strDefaultSavingsAccount = "DefaultSavingsAccount";
 const std::string strDefaultCashAccount = "DefaultCashAccount";
 
+// Based on AbstractFactory pattern
 
 class Account
 {
