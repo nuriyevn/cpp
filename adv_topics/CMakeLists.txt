@@ -1,0 +1,9 @@
+
+cmake_minimum_required(VERSION 3.17)
+project (advanced_topics)
+add_executable(define_a_class define_a_class.cpp)
+add_executable(data_members data_members.cpp)
+add_executable(member_function member_function.cpp)
+add_executable(constructors constructors.cpp)
+add_executable(implicit_explicit implicit_explicit.cpp)
+add_executable(namespace namespace.cpp)
