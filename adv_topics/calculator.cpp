@@ -10,7 +10,7 @@ public:
         if(b!=0){
             return a/b;
         }else{
-            return 0;
+            throw invalid_argument("Zero Division");
         }
     }
 
@@ -19,6 +19,21 @@ int main(){
     Calculator calc;
     int result = calc.Add(3, 0);
     cout<<result<<" that was a result "<<endl;
-    double theOtherResult = calc.Division(44, 3);
+    double theOtherResult = 0.0;
+    double divisor = .0;
+    try
+    {
+        divisor = 44;
+        theOtherResult = calc.Division(divisor, 0);
+    }
+    catch(const std::invalid_argument& e)
+    {
+        std::cerr << e.what() << '\n';
+        double newDivider = 0;
+        cout << "Please enter new divider";
+        cin >>  newDivider;
+        theOtherResult = calc.Division(divisor, newDivider);
+    }
+
     cout<<theOtherResult<<" that was the other result"<<endl;
 }
