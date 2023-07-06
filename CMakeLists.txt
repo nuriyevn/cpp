@@ -18,5 +18,7 @@ add_subdirectory(unittest)
 add_subdirectory(oop)
 add_subdirectory(overloading)
 add_subdirectory(exception_handling)
+add_subdirectory(ERULES)
 add_subdirectory(memory_management)
 add_subdirectory(adv_topics)
+

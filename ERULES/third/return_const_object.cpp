@@ -28,14 +28,14 @@ int Rational::denominator() const
 	return denom;
 }
 
-const Rational operator*(const Rational& lhs, const Rational& rhs)
+Rational operator*(const Rational& lhs, const Rational& rhs)
 {
-	
+	return (lhs.numerator() * rhs.numerator()) / (lhs.denominator() * rhs.denominator());
 }
 
 int main()
 {
 	Rational r1, r2, r3;
-	(r1*r2) = r3; // this madness is legal if return type of operator* for Rational class has const modificator
-
+	(r1*r2) = r3; // this madness is legal if return type of operator* for Rational class has not a const modificator
+	// this modifies a temporary object for r1*r2  by replacing the temporary object with r3, which is non-sense
 }
