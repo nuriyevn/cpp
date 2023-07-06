@@ -1,3 +1,5 @@
+#include <iostream>
+using namespace std;
 class Student 
 {
     string name;
@@ -33,7 +35,16 @@ class Student
             cout << grants[i] << endl;
         }
     }
-    
+    int sumUpAllGrants(){
+        int result = 0;
+        for (int i =0; i < currentGrant; i++){
+            result += grants[i];
+        }
+        return result;
+    }
+    string getName(){
+        return name;
+    }
 };
 
 
@@ -50,4 +61,6 @@ int main()
     student2.addGrant(400);
 
     student2.printAllGrants();
+    cout << "sum for " << student2.getName() << " is " << student2.sumUpAllGrants() << endl;
+    cout << "sum for " << student.getName() << " is " << student.sumUpAllGrants() << endl;
 }
