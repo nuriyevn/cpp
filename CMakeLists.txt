@@ -21,4 +21,5 @@ add_subdirectory(exception_handling)
 add_subdirectory(ERULES)
 add_subdirectory(memory_management)
 add_subdirectory(adv_topics)
-
+add_subdirectory(stl)
+add_subdirectory(hackerrank)
