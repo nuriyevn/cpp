@@ -28,12 +28,17 @@ Rational & Rational::operator=(const Rational & rhs){
 Rational Rational::operator + ( const Rational & rhs ) const {
    
     return Rational((this->_n * rhs._d) + (this->_d * rhs._n), this->_d * rhs._d);
+    //     Rational(   (2     * 10)     + (5        *  3)    ,  5 * 10)
+    // Rational(35, 50);
 }
 int main(){
     Rational first(2,5);
     Rational second(3,10);
-    Rational third;
-    third = first + second;
+    Rational third; // (0, 1) 
+    third = second + second;
+
+
+
     cout<<third.numerator()<<'/'<<third.denominator()<<endl;
     return 0;
 }
