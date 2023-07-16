@@ -11,6 +11,8 @@ public:
     ~Rational (){};
     int numerator() const { return _n;};
     int denominator() const {return _d;};
+    void setNumerator(int num) { _n = num;};
+    void setDenominator(int den) { _d = den;};
     Rational & operator = (const Rational &);
     Rational operator + (const Rational &) const;
     Rational operator - (const Rational &) const;
@@ -31,14 +33,31 @@ Rational Rational::operator + ( const Rational & rhs ) const {
     //     Rational(   (2     * 10)     + (5        *  3)    ,  5 * 10)
     // Rational(35, 50);
 }
+
+std::ostream& operator<<(std::ostream &out, const Rational& obj)
+{
+    out << obj.numerator() << '/' << obj.denominator() << endl;
+    return out;
+}
+
+std::istream& operator>>(std::istream &in, Rational& obj)
+{
+    int n, d;
+    in >> n >> d;
+    obj.setNumerator(n);
+    obj.setDenominator(d);
+    return in;
+}
+
 int main(){
     Rational first(2,5);
     Rational second(3,10);
-    Rational third; // (0, 1) 
-    third = second + second;
+    Rational third(4, 10);
+    Rational fourth;
+    fourth = (first + second) + third;
 
 
-
-    cout<<third.numerator()<<'/'<<third.denominator()<<endl;
+    cout << first + 8;
+    
     return 0;
 }

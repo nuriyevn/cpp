@@ -8,6 +8,7 @@
     "cwd": "${workspaceFolder}",
 
     "configurations": [
+        
         {
             "name": "(Windows) Launch",
             "type": "cppvsdbg",
@@ -71,7 +72,19 @@
             "externalConsole": false,
             "MIMode": "lldb",
             "externalConsole":true,
-        }
+        },
+        {
+            "name": "(lldb) Launch Rational",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/adv_topics/rational",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "lldb"
+        },
     ]
   }
   
