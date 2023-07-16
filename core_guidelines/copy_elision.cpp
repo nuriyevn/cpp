@@ -3,9 +3,11 @@
 #include <iostream>
 using namespace std;
 
-int n = 0;
-
 /*
+
+11.9.6 Copy/move elision
+[class.copy.elision]
+
 The C++ language standard generally allows implementations to perform any optimization, 
 provided the resulting program's observable behavior is the same as if, i.e. pretending, 
 the program were executed exactly as mandated by the standard. Beyond that, 
@@ -18,17 +20,29 @@ but not in semantics; copy-initialization still requires an accessible copy cons
 The optimization can not be applied to a temporary object that has been bound to a reference.
 */
 
+int n = 0;
+
 struct C {
+    C() {}
     explicit C(int) { cout << "exclicit ctor\n";  };
     C(const C& ) { cout << "copy constr\n"; ++n; } // the copy constructor has  a visible side effect
     // it modifies an object with static storage duration
 };
 
+C f()
+{
+    return C();
+}
+
 
 int main()
 {
+    
     C c1(42); // direct initialization, calls C::C(int)
     C c2 = C(42); // copy initialization, can call C::C(const C&)
-    
+
     cout << n << endl; // prints 0 if the copy was elided, 1 otherwise;
+
+    C obj = f();
+    C ob2 = C(43);
 }

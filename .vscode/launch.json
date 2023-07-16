@@ -6,8 +6,8 @@
     "args": ["arg1", "arg2"],
     "environment": [{ "name": "config", "value": "Debug" }],
     "cwd": "${workspaceFolder}",
+
     "configurations": [
-    Ctetst
         {
             "name": "(Windows) Launch",
             "type": "cppvsdbg",
@@ -45,6 +45,32 @@
             "environment": [],
             "externalConsole": false,
             "MIMode": "lldb"
+        },
+        {
+            "name": "(lldb) attach expressions/value_category",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "${workspaceFolder}/build/expressions/value_category",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "externalConsole":true,
+        },
+        {
+            "name": "(lldb) launch expressions/value_category",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/expressions/value_category",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",
+            "externalConsole":true,
         }
     ]
   }
