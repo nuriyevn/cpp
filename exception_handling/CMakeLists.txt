@@ -16,5 +16,8 @@ add_library(DateLibrary date.cpp)
 
 add_executable(BasicGuarantee basic_guarantee.cpp)
 target_link_libraries(BasicGuarantee DateLibrary)
+set(CMAKE_CXX_STANDARD 14)
+#[[set(CMAKE_CXX_FLAGS "-fno-elide-constructors")]]
+add_executable(except_throw except.throw.cpp)
 
 
