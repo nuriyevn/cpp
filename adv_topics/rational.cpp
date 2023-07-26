@@ -27,12 +27,15 @@ Rational & Rational::operator=(const Rational & rhs){
     }
     return *this;
 }
+
+// TODO for students: reducing the lowest common denominator for all arithmetics
 Rational Rational::operator + ( const Rational & rhs ) const {
    
     return Rational((this->_n * rhs._d) + (this->_d * rhs._n), this->_d * rhs._d);
     //     Rational(   (2     * 10)     + (5        *  3)    ,  5 * 10)
     // Rational(35, 50);
 }
+
 
 std::ostream& operator<<(std::ostream &out, const Rational& obj)
 {
