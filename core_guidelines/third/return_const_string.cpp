@@ -53,7 +53,8 @@ int main()
     foo().bar(); // non-sense number there, again adding const to return can help.
     // baz() = 4;  // not valid anyway for built-in types, with or without const return type
 
-    foo4() = T();
+    //foo4() = T();  // passing const T as this argument discards qualifiers
+    // error C2678: binary '=': no operator found which takes a left-hand operand of type 'const T' (or there is no acceptable conversion)
     return 0;
 }
 

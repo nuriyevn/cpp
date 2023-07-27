@@ -1,5 +1,6 @@
 #include <iostream>
 #include <thread>
+#include <cmath>
 using namespace std;
 
 void task1(std::string msg)

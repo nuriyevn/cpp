@@ -1,5 +1,6 @@
 // https://iamsorush.com/posts/cpp-variadic-template/
 #include <iostream>
+#include <cmath>
 
 struct FooCounter 
 {

@@ -48,7 +48,7 @@ public:
     // is provided
     // An implicit copy constructor is automatically defined.
     // The definition assumed for this function performs a shallow copy, roughly equivalent to:
-    MyClass::MyClass(const MyClass& x) : a(x.a), b(x.b), c(x.c) {}
+    MyClass(const MyClass& x) : a(x.a), b(x.b), c(x.c) {}
 };
 
 class Example5 {
