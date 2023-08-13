@@ -8,6 +8,8 @@
     "cwd": "${workspaceFolder}",
 
     "configurations": [
+
+    
         
         {
             "name": "(Windows) Launch",
@@ -85,6 +87,50 @@
             "externalConsole": true,
             "MIMode": "lldb"
         },
+        {
+            "name": "(lldb) Launch Task2",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/hackerrank/Debug/task2",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true
+        },{
+            "name": "(lldb) Attach Task2",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "${workspaceFolder}/build/hackerrank/Debug/task2",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true
+        },
+        {
+            "name": "(lldb) Launch Task1",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/hackerrank/Debug/task1",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true
+        },{
+            "name": "(lldb) Attach Task1",
+            "type": "cppdbg",
+            "request": "attach",
+            "program": "${workspaceFolder}/build/hackerrank/Debug/task1",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": true
+        },
+
+        
     ]
   }
   

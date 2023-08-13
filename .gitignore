@@ -9,3 +9,9 @@
 **/bin
 **/obj
 build/
+CMakeFiles/
+_deps/
+*.cmake
+CMakeCache.txt
+makefile
+Makefile

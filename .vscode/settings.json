@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.embeddedhtml": "html",
         "memory": "cpp",
         "iostream": "cpp",
         "exception": "cpp",
@@ -101,7 +102,8 @@
         "string_view": "cpp",
         "__nullptr": "cpp",
         "__string": "cpp",
-        "numeric": "cpp"
+        "numeric": "cpp",
+        "future": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled",
     "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools"
