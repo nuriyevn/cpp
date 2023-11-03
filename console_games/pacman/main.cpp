@@ -1,10 +1,13 @@
 #include <iostream>
 #include <Windows.h>
-#include <conio.h>
 #include <time.h>
+#include <cctype>
+
+int HandleKeyEvent( const KEY_EVENT_RECORD &key_event );
+//void HandleMouseEvent( const MOUSE_EVENT_RECORD &mouse_event );
 
 using namespace std;
-
+// Wrapper
 class CriticalSectionContainer
 {
 public:
@@ -74,8 +77,6 @@ int APPLE_COLOR = yellow;
 int WALL_COLOR = light_gray;
 int SCORE_COLOR = light_magenta;
 
-
-
 const int ene_count = 5;
 COORD enemies[ene_count];
 
@@ -87,9 +88,6 @@ int field[lines][cols];
 DWORD moveEnemies(CriticalSectionContainer* pcsc);
 bool gameOver = false;
 
-
-
-
 void main()
 {
 	CRITICAL_SECTION cs;
@@ -98,7 +96,7 @@ void main()
 	CriticalSectionContainer csc(&cs);
 
 	// Setting the width of caret
-	srand(time(0));
+	srand((unsigned int)time(0));
 	CONSOLE_CURSOR_INFO cci;
 	cci.bVisible = true;
 	cci.dwSize = 50;
@@ -211,7 +209,27 @@ void main()
 		// MOVING THE PLAYER
 
 		// Handling keyboard key code
-		int code = _getch(); // conio.h
+		
+		int code;
+
+		HANDLE hStdin;
+		INPUT_RECORD input[128];
+		DWORD num_input;
+
+		hStdin = GetStdHandle( STD_INPUT_HANDLE );
+
+		if (ReadConsoleInput( hStdin, input, sizeof input / sizeof *input, &num_input ))
+		{
+			for ( DWORD i = 0; i < num_input; i++ )
+			{
+				if ( input[i].EventType == KEY_EVENT )
+				{
+					code = HandleKeyEvent( input[i].Event.KeyEvent );
+					
+				}
+			}
+		}
+
 
 		CSBLOCK(csc)
 		{
@@ -365,5 +383,38 @@ DWORD moveEnemies(CriticalSectionContainer* pcss)
 			}
 		}
 	}
+	return 0;
+}
+
+int HandleKeyEvent( const KEY_EVENT_RECORD &key_event )
+{
+    std::cout << "Key ";
+    if ( std::isprint( static_cast<unsigned char>(key_event.uChar.AsciiChar) ) )
+        std::cout << (char)std::toupper( static_cast<unsigned char>(key_event.uChar.AsciiChar) );
+    else
+        std::cout << "<unprintable>";
+
+	
+    if ( key_event.bKeyDown)
+    {
+        //std::cout << " down!\n";
+		switch (key_event.wVirtualKeyCode)
+		{
+			case VK_UP:
+				return UP;
+			case VK_RIGHT:
+				return RIGHT;
+			case VK_LEFT:
+				return LEFT;
+			case VK_DOWN:
+				return DOWN; 
+			case VK_ESCAPE:
+				return ESCAPE; 
+		}
+    }
+    else
+    {
+        std::cout << " up!\n";
+    }
 	return 0;
 }
