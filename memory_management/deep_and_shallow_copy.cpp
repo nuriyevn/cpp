@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
  
+ int breadth;
+
 // Box Class
 class box {
 private:
@@ -10,26 +12,33 @@ private:
  
 public:
 
-    // copy constr
-    box(const box& rhs)
+    box()
     {
-        this->breadth = rhs.breadth;
-        this->height = rhs.height;
-        this->length = rhs.length;
+        this->breadth = 0;
+        this->length = 0;
+        this->height = 0;
+    }
+    
+    // copy constr
+    box(const box& obj)
+    {
+        this->breadth = obj.breadth;
+        this->height = obj.height;
+        this->length = obj.length;
     }
 
     // assignment
-    box& operator=(const box& rhs)
+    box& operator=(const box& obj)
     {
-         if (this != &rhs)
+         if (this != &obj)
          {
-            this->breadth = rhs.breadth;
-            this->height = rhs.height;
-            this->length = rhs.length;
+            this->breadth = obj.breadth;
+            this->height = obj.height;
+            this->length = obj.length;
          }
-
-         return this;
+         return *this;
     }
+
 
     // Function that sets the dimensions
     void set_dimensions(int length1, int breadth1,

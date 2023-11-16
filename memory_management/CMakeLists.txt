@@ -1,3 +1,4 @@
 cmake_minimum_required(VERSION 3.17)
 project(memory_management)
 add_executable(UnnamedTemporariesLifetime unnamed_temporary.cpp)
+add_executable(deep_and_shallow_copy deep_and_shallow_copy.cpp)
