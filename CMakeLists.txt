@@ -12,6 +12,7 @@ FetchContent_MakeAvailable(googletest)
 
 project(cpp_top_level)
 add_subdirectory(adv_topics)
+add_subdirectory(console_games)
 add_subdirectory(core_guidelines)
 add_subdirectory(design_patterns)
 add_subdirectory(exception_handling)
